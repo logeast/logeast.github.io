@@ -85,6 +85,11 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现ajax请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何实现ajax请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax创建XMLHttpRequest对象"><span class="post-toc-number">2.</span> <span class="post-toc-text">ajax创建XMLHttpRequest对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax向服务器发送请求"><span class="post-toc-number">3.</span> <span class="post-toc-text">ajax向服务器发送请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax服务器响应"><span class="post-toc-number">4.</span> <span class="post-toc-text">ajax服务器响应</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#onreadystatechange事件"><span class="post-toc-number">5.</span> <span class="post-toc-text">onreadystatechange事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用回调函数"><span class="post-toc-number">6.</span> <span class="post-toc-text">使用回调函数</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何实现ajax请求"><span class="post-toc-text">如何实现ajax请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax创建XMLHttpRequest对象"><span class="post-toc-text">ajax创建XMLHttpRequest对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax向服务器发送请求"><span class="post-toc-text">ajax向服务器发送请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ajax服务器响应"><span class="post-toc-text">ajax服务器响应</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#onreadystatechange事件"><span class="post-toc-text">onreadystatechange事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用回调函数"><span class="post-toc-text">使用回调函数</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2ElEQVR42u3aS1LEMAwFwLn/pWFLFSR5kgJk7M6KyjC22wuEPq+PLZ8XNjY2NjY2NjY29iPZr/j5/vtf3/ywTbBaskJ15cNdsLGxsZdmX/zpPzjo+aUkmPOLqF7HxZmxsbGxN2CfY3qwhHceoo7OkJ8ZGxsbGzs57vmbyeXmIRAbGxsbu8pOUpFqspFfCjY2NjZ2r0CTIOcFoGTfP62lYWNjYz+eXW30PuHnf+hvY2NjYz+S3XuSENILPHd994fVsLGxsRdlV8coJ5/me1UTlcSCjY2NvSo7OfrR71QZvfV77QpsbGzs3dh5sSY54jl73gzutRCwsbGxV2VXxx/zhm4+QJmTqokNNjY29j7s3j/380LP/AoKJ8HGxsZemp2X5nsBbJJyVAeJsLGxsbHz0nxecqqWgfLwOZo5xcbGxl6IXQ0J1XJPNW2YFLkOV8PGxsbegJ2P8lTfzBsPf1RLw8bGxn5DdnXp3pt8r3uLUNjY2Nj7sKuln/zo59/qMfJiEzY2NvYO7BuWKyYJeQs53+uGmVNsbGzshdi9pm9yBZPhy14BCxsbG3sfdh5yJi3eZADofN88aI26ItjY2NhvyE7Sg+pQTvW71XHPchqDjY2NvQG7OqwzOdyk8FQNvdjY2Ng7sPOwkY/X9MJSLykaZWDY2NjYb86eNAAmhae8wFRNfrCxsbF3Y+fUCSYp7vdaznmzARsbG3tV9mR0Jin35Jhq67dabMLGxsZelT1vr+aFoXtbxXn6hI2Njb02uxeoeulKL9Tlwewi1cHGxsZelD0PD8kVVIeEJs2DZn8bGxsb+83ZecGol1r0dsnTm+i02NjY2Buwq2Wa6uDOPMmptpaxsbGxsavJRrWRMOHlQQ4bGxsbu3rovAxUhfV2xMbGxt6HPS8qXYSQ4qfVi7tQYGNjYy/Nnpds8iJRtZxUXe0X+9vY2NjYj2Tv82BjY2NjY2NjY2M/5vkEYpxJS6rNDqMAAAAASUVORK5CYII=">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -507,12 +500,38 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
 <li>接收服务器响应数据。监听readystatechange事件，通过该实例的readyState属性来判断请求状态，其分为0，1，2，3，4四种状态，4表示请求完成且响应就绪。这时可通过HTTP的status判断请求结果，进行相应的操作。</li>
 </ol>
 <p>下面是一个ajax请求改变文本内容的实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">  <span class="comment">//ie7+,firefox,chrome,safari,opera</span></span><br><span class="line">  xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//ie5,ie6</span></span><br><span class="line">  xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">&#125;</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span> &amp;&amp; xhr.status==<span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.open(<span class="string">"GET"</span>, <span class="string">"xhr_info.txt"</span>, <span class="literal">true</span>);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var xhr;
+if(window.XMLHttpRequest) {
+  //ie7+,firefox,chrome,safari,opera
+  xhr = new XMLHttpRequest();
+} else {
+  //ie5,ie6
+  xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+xhr.onreadystatechange = function() {
+  if(xhr.readyState==4 &amp;&amp; xhr.status==200) {
+    console.log(xhr.responseText);
+  }
+}
+xhr.open(&quot;GET&quot;, &quot;xhr_info.txt&quot;, true);
+xhr.send(null);
+</code></pre>
 <h3 id="ajax创建XMLHttpRequest对象"><a href="#ajax创建XMLHttpRequest对象" class="headerlink" title="ajax创建XMLHttpRequest对象"></a>ajax创建XMLHttpRequest对象</h3><p>XMLHttpRequest用于在后台与服务器交换数据。</p>
 <p>创建XMLHttpRequest对象：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">  <span class="comment">//ie7+,firefox,chrome,safari,opera</span></span><br><span class="line">  xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">//ie5,ie6</span></span><br><span class="line">  xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">var xhr;
+if(window.XMLHttpRequest) {
+  //ie7+,firefox,chrome,safari,opera
+  xhr = new XMLHttpRequest();
+}else {
+  //ie5,ie6
+  xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+</code></pre>
 <h3 id="ajax向服务器发送请求"><a href="#ajax向服务器发送请求" class="headerlink" title="ajax向服务器发送请求"></a>ajax向服务器发送请求</h3><p>使用XMLHttpRequest对象的<code>open()</code>和<code>send()</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求类型，文件在服务器上的位置，是否异步</span></span><br><span class="line">xhr.open(<span class="string">"GET"</span>, <span class="string">"ajax_info.txt"</span>, ture);</span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//请求类型，文件在服务器上的位置，是否异步
+xhr.open(&quot;GET&quot;, &quot;ajax_info.txt&quot;, ture);
+xhr.send(null);
+</code></pre>
 <ol>
 <li>GET还是POST<br>GET和POST是TCP/IP协议中两种发送请求的方法，本质上都是TCP链接。他们运输数据的渠道有些不一样，GET通过URL传递参数，POST放在request body中传递参数。<br>与POST相比，GET更简单也更快(只产生一个数据包)，在大部分情况下可以使用。</li>
 </ol>
@@ -538,7 +557,8 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
 <h3 id="ajax服务器响应"><a href="#ajax服务器响应" class="headerlink" title="ajax服务器响应"></a>ajax服务器响应</h3><p>如需获取来自服务器的响应，可以使用XMLHttpRequest对象的responseText或responseXML属性。</p>
 <ol>
 <li><p>responseText<br>如果来自服务器的响应并非XML，使用responseText将返回字符串响应数据。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>).innerHTML = xhr.responseText;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">document.getElementById(&quot;mydiv&quot;).innerHTML = xhr.responseText;
+</code></pre>
 </li>
 <li><p>responseXML<br>如果来自服务器的响应是XML，而且需要XML对象进行解析，可使用responseXML获得XML形式的响应数据。</p>
 </li>
@@ -566,11 +586,58 @@ ajax是异步的JavaScript和XML。ajax是一种通过在后台与服务器进�
 </li>
 </ol>
 <h3 id="onreadystatechange事件"><a href="#onreadystatechange事件" class="headerlink" title="onreadystatechange事件"></a>onreadystatechange事件</h3><p>当请求发送到服务器时，我们需要执行一些基于响应的任务。<br>只要readyState属性的值由一个值变成另一个值，都会触发一次onreadystatechange事件，可以利用这个事件来检测每次状态变化后的readyState的值。<br>当<code>readyState==4</code>且<code>status==200</code>时，响应就已经就绪。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>) &#123;</span><br><span class="line">    <span class="comment">//服务器完成了请求或客户端执行GET请求但文件未发生变化(后者通常用于浏览器的缓存机制)</span></span><br><span class="line">    <span class="keyword">if</span>((xhr.status&gt;=<span class="number">200</span> &amp;&amp; xhr.status&lt;=<span class="number">300</span>) || xhr.status==<span class="number">304</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(xhr.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"request error."</span>+xhr.status);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">xhr.onreadystatechange = function() {
+  if(xhr.readyState==4) {
+    //服务器完成了请求或客户端执行GET请求但文件未发生变化(后者通常用于浏览器的缓存机制)
+    if((xhr.status&gt;=200 &amp;&amp; xhr.status&lt;=300) || xhr.status==304) {
+      console.log(xhr.responseText);
+    }else{
+      console.log(&quot;request error.&quot;+xhr.status);
+    }
+  }
+}
+</code></pre>
 <h3 id="使用回调函数"><a href="#使用回调函数" class="headerlink" title="使用回调函数"></a>使用回调函数</h3><p>回调函数是一种以参数形式传递给另一个函数的函数。如果网页存在多个ajax任务，可以为创建XMLHttpRequest对象编写一个标准的函数，并为每个ajax任务调用该函数。该函数调用应该包含URL和发生onreadystatechange事件时执行的任务。</p>
 <p>下面是一个调用回调函数与服务器进行交互的实例。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ajax_func.js</span></span><br><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeContent</span>(<span class="params">url, cfunc</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">    xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  xhr.onreadystatechange = cfunc;</span><br><span class="line">  xhr.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</span><br><span class="line">  xhr.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  changeContent(<span class="string">"ajax_info.txt"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(xhr.status==<span class="number">200</span> || xhr.status==<span class="number">304</span>) &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"mydiv"</span>).innerHTML = xhr.responseText;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        alert(<span class="string">"request error."</span> + xhr.status);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ajax回调函数<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"mydiv"</span> &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>ajax回调函数<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"ajaxFunc()"</span> &gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"ajax_func.js"</span> &gt;</span><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">//ajax_func.js
+var xhr;
+function changeContent(url, cfunc) {
+  if(window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest();
+  }else{
+    xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+  }
+  xhr.onreadystatechange = cfunc;
+  xhr.open(&quot;GET&quot;, url, true);
+  xhr.send(null);
+}
+function ajaxFunc() {
+  changeContent(&quot;ajax_info.txt&quot;, function() {
+    if(xhr.readyState==4) {
+      if(xhr.status==200 || xhr.status==304) {
+        document.getElementById(&quot;mydiv&quot;).innerHTML = xhr.responseText;
+      }else{
+        alert(&quot;request error.&quot; + xhr.status);
+      }
+    }
+  })
+}
+</code></pre>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; &gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;ajax回调函数&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;mydiv&quot; &gt;
+      &lt;h1&gt;ajax回调函数&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;button&quot; onclick=&quot;ajaxFunc()&quot; &gt;&lt;/button&gt;
+  &lt;/body&gt;
+  &lt;script src=&quot;ajax_func.js&quot; &gt; &lt;/script&gt;
+&lt;/html&gt;
+</code></pre>
 
         
     
@@ -959,6 +1026,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -969,6 +1042,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

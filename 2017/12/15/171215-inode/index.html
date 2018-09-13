@@ -58,7 +58,7 @@
     <meta name="description" itemprop="description" content="
 UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
 ">
-    <meta name="keywords" content="博客,Linux,Unix">
+    <meta name="keywords" content="博客,Unix,Linux">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -84,6 +84,11 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
         
 
     
@@ -220,7 +225,7 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
     <meta property="og:description" content="
 UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
 ">
-    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="Unix"> 
+    <meta property="og:article:tag" content="Unix"> <meta property="og:article:tag" content="Linux"> 
 
     
         <meta property="article:published_time" content="Fri Dec 15 2017 16:01:16 GMT+0800">
@@ -265,7 +270,7 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Linux,Unix博客",
+    "keywords": ",Unix,Linux博客",
     "description": "
 UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
 ",
@@ -333,7 +338,7 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#inode"><span class="post-toc-number">1.</span> <span class="post-toc-text">inode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#硬链接"><span class="post-toc-number">2.</span> <span class="post-toc-text">硬链接</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#inode"><span class="post-toc-text">inode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#硬链接"><span class="post-toc-text">硬链接</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcElEQVR42u3awVLsIBQE0Pn/n35v60Iz3ZeAUU9WlsMEDlZxseH171c/Lzw8PDw8PDw8vIfxXvHzyYvi9h9/89Wn178v+sLDw8M7wnuz1F7ykgG1b14ZGx4eHt5J3lfDSpb1pOV1j8nbrtvj4eHhPZk322pfL+6zfvHw8PB+Cm/HhjspOXh4eHhP4yX/8CchbAvIJ2h71oKHh4cX8/JDpvM/Hz3fw8PDwwt49ZWmMlyYBbhLI8TDw8PbzMsX4jxoaKOH6zZ1KIyHh4e3mdcu/UkHbZyRlI38aA0PDw9vNy+PSltYHtG2bYZ1Dw8PD+8m3qzj/KCr3WS3JWFY9/Dw8PCWee0h0yx4bYOJ9iICHh4e3knebOvcRq75p8lWu657eHh4eLfy2m5mpWL9umpUrvDw8PA28/IBtSFFG2cksJtTajw8PLybToh2dH/vZv3NSPDw8PC+lZcHvjN8PilF73h4eHgHefWLyksD+WFY/ub6AAwPDw/vJl4e3ebHVPkSn0/WUkqNh4eHdytvZbGelZP2+K0IMvDw8PA28+rLoKOgYRjIBi3fhBF4eHh423h3HUe129/Z+9/8AfDw8PAO8maL9ay05BOUTAceHh7eE3htBJCXhzyMuP7uUmHAw8PDW+DdNej177bF4NvulOHh4f153it+1oebF4A2IMbDw8M7z1uJcWdL/Gwqh4UBDw8PbxsvX6CTawErVwFWJhEPDw/vmbzoCL+crHZrjoeHh/ezeLMAd/3ALOkXDw8P7ySvHVwb3eaXq2aXBvDw8PBO8mZXnZK4oQ0pbr50hYeHh7eB9/sePDw8PDw8PDy8Bzz/AaU2xHCXGeQiAAAAAElFTkSuQmCC">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -503,8 +496,17 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
 <a id="more"></a>
 <p>通常情况下，我们通过一个文件的文件名来定位这个文件，查看文件内容就是查看保存在储存器中的数据块。其实文件还包含了一些其他的信息，例如文件的权限，长度，在磁盘中的位置和修改时间等等，我们将这些信息称为文件的元信息，而元信息在UNIX下便储存在inode中。总结来讲，文件包含了三部分，即文件名，文件内容和元信息。</p>
 <h2 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h2><p>当一个文件被创建时，系统会分配一个inode给它，这样就将文件名和inode关联起来了，我们可以将inode看做文件系统的内部名称。当用户或程序引用该文件时，系统就会通过该文件的文件名来查找相应的inode，然后通过inode来获取所需要的文件信息。也就是说在UNIX系统中文件名仅仅只是与inode相连，而不是与文件相连，这是和Windows系统中不同的一点。</p>
-<p>我们来看看inode里面具体包含了哪些信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ stat -x /bin</span><br><span class="line"></span><br><span class="line">File: &quot;/bin&quot;</span><br><span class="line">Size: 1292         FileType: Directory</span><br><span class="line">Mode: (0755/drwxr-xr-x)         Uid: (    0/    root)  Gid: (    0/   wheel)</span><br><span class="line">Device: 1,4   Inode: 420321    Links: 38</span><br><span class="line">Access: Sun Dec 10 18:02:35 2017</span><br><span class="line">Modify: Sun Sep 10 15:39:42 2017</span><br><span class="line">Change: Sun Sep 10 15:39:42 2017</span><br></pre></td></tr></table></figure></p>
-<p>我们看到inode中包含了这些信息。</p>
+<p>我们来看看inode里面具体包含了哪些信息。</p>
+<pre><code>$ stat -x /bin
+
+File: &quot;/bin&quot;
+Size: 1292         FileType: Directory
+Mode: (0755/drwxr-xr-x)         Uid: (    0/    root)  Gid: (    0/   wheel)
+Device: 1,4   Inode: 420321    Links: 38
+Access: Sun Dec 10 18:02:35 2017
+Modify: Sun Sep 10 15:39:42 2017
+Change: Sun Sep 10 15:39:42 2017
+</code></pre><p>我们看到inode中包含了这些信息。</p>
 <blockquote>
 <ul>
 <li>文件字节数</li>
@@ -527,8 +529,29 @@ UNIX下，我们可以通过操作一个文件的inode查看和管理这个文�
 <li>只有删除了所有指向某个inode的文件名时，才会删除inode，也就是文件本身</li>
 <li>修改任何一个文件名下的内容都会影响到所有的文件名</li>
 </ul>
-<p>我们来做个实验，可以通过<code>ln</code>来创建硬链接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ln index.html main.html</span><br><span class="line"></span><br><span class="line">$ ls -li index.html main.html</span><br><span class="line">9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 index.html</span><br><span class="line">9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 main.html</span><br><span class="line"></span><br><span class="line">$ cat index.html </span><br><span class="line">test for inode.</span><br><span class="line"></span><br><span class="line">$ cat main.html</span><br><span class="line">test for inode.</span><br><span class="line"></span><br><span class="line">$ cat &gt;index.html</span><br><span class="line">change the content.</span><br><span class="line">&lt;C-c&gt;</span><br><span class="line"></span><br><span class="line">$ cat index.html</span><br><span class="line">change the content.</span><br><span class="line"></span><br><span class="line">$ cat main.html</span><br><span class="line">change the content.</span><br></pre></td></tr></table></figure></p>
-<p>第一列表示inode号码，第三列表示指向这个inode的链接数。发现通过<code>ln</code>命令创建的两个文件名指向同一个inode。当我们尝试修改其中一个文件名下文件时，发现另一个文件也改变了。</p>
+<p>我们来做个实验，可以通过<code>ln</code>来创建硬链接。</p>
+<pre><code>$ ln index.html main.html
+
+$ ls -li index.html main.html
+9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 index.html
+9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 main.html
+
+$ cat index.html 
+test for inode.
+
+$ cat main.html
+test for inode.
+
+$ cat &gt;index.html
+change the content.
+&lt;C-c&gt;
+
+$ cat index.html
+change the content.
+
+$ cat main.html
+change the content.
+</code></pre><p>第一列表示inode号码，第三列表示指向这个inode的链接数。发现通过<code>ln</code>命令创建的两个文件名指向同一个inode。当我们尝试修改其中一个文件名下文件时，发现另一个文件也改变了。</p>
 
         
     
@@ -917,6 +940,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -927,6 +956,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

@@ -85,6 +85,11 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式"><span class="post-toc-number">1.</span> <span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式的限制"><span class="post-toc-number">2.</span> <span class="post-toc-text">严格模式的限制</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式"><span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式的限制"><span class="post-toc-text">严格模式的限制</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aS3LDQAgFQN//0skBUpEfoDiSaK1c+Vj0bCge8/pa+bywsbGxsbGxsbGxL8l+xU/hBa3/Ov6Gn5+rNWNjY2M/m50UkZT1218mn3NGs2ZsbGzsBezkNQk1aULHb5w0M2xsbGzsnH1yWflQgY2NjY09Zh8XVB1IqjEWNjY2NvYkVKoWnYwZvQDro1kaNjY29uXZvWj+fz9/dL+NjY2NfWF27zJNdT2Qjy75eFOuHBsbG/uh7HnEk48u89Y1iqKwsbGxH83OW8t8eVCN9fP46c3PsbGxsRewk3KTV/Yiql6TyxcS2NjY2M9m9waAXgObNLnRChkbGxv70ezjr6uue5MxJrleWa2tud/GxsbGvjm72pyqa9o8HpqvhAuhEjY2NvZD2fmIUl0nnDv25OMQNjY29jZ2MirkLWp+3ad6fNjY2Nib2dX1bTOgH8dPo+UENjY29gJ2tc3kC93eQc8PERsbG3sDO1+4Hhc3uVKZr2zzYalwUwkbGxv75uxefDNfu+YHkR/Km4aHjY2NvYadFJeve/NjmlyyjMYebGxs7AXsHNYbHvKmOF/3YmNjY+9h54Xml2+S1pIca691FbI0bGxs7Eewe/F9dT1QLXreMpsTGDY2NvYN2RNqldQ7oN6CubDfxsbGxl7AzgOgHjj/5rzyExoYNjY29g3Z1WDorHBqcriFxQY2Njb2AvZkSJgH/clRVn+LjY2NvZM9WQPMkZMjG4VK2NjY2LdlV595kNRrjfORCRsbG/up7OrVxpxUuExTbJbVSzzY2NjYG9hJ05qMIr3WWF1jvGmT2NjY2AvYeVgzCYbyJe7kKVzZwcbGxl7JnsDOXTNfYtGLjY2NfVt2/pPJdZxeLIWNjY29k52ESuX16iB4Si7oJAtmbGxs7A3sPKaZx/f5GJM3qj/fb2NjY2NfmL3nwcbGxsbGxsbGxr7M8w2/b+xvgWKmyAAAAABJRU5ErkJggg==">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -510,28 +503,64 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 </ul>
 <h2 id="严格模式的限制"><a href="#严格模式的限制" class="headerlink" title="严格模式的限制"></a>严格模式的限制</h2><ol>
 <li><p>不允许使用未声明的变量<br>对象也是一个变量。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line">x = &#123;<span class="attr">s1</span>:<span class="number">100</span>, <span class="attr">s2</span>:<span class="number">99</span>&#125;; <span class="comment">//Uncaught ReferenceError: x is not defined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+x = {s1:100, s2:99}; //Uncaught ReferenceError: x is not defined
+</code></pre>
 </li>
 <li><p>不允许对变量或函数使用delete操作符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">delete</span> x; <span class="comment">//Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+var x = 1;
+delete x; //Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.
+</code></pre>
 </li>
 <li><p>不允许变量重名</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fs</span>(<span class="params">r1,r1</span>) </span>&#123;</span><br><span class="line">&#125; <span class="comment">//Uncaught SyntaxError: Duplicate parameter name not allowed in this context</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+function fs(r1,r1) {
+} //Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+</code></pre>
 </li>
 <li><p>不允许使用八进制</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">012</span>; <span class="comment">//Uncaught SyntaxError: Octal literals are not allowed in strict mode.</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+var x = 012; //Uncaught SyntaxError: Octal literals are not allowed in strict mode.
+</code></pre>
 </li>
 <li><p>抛弃with语句</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"hello"</span>;</span><br><span class="line"><span class="keyword">with</span>(str) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(toUpperCase());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Uncaught SyntaxError: Strict mode code may not include a with statement</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+var str = &quot;hello&quot;;
+with(str) {
+console.log(toUpperCase());
+}
+//Uncaught SyntaxError: Strict mode code may not include a with statement
+</code></pre>
 </li>
 <li><p>不可对只读对象赋值，不可对不可配置对象使用delete操作符</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype);</span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">//Uncaught TypeError</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype);</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+console.log(Object.prototype);
+delete Object.prototype; //Uncaught TypeError
+console.log(Object.prototype); 
+</code></pre>
 </li>
 <li><p>禁止this关键字指向全局对象</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">fs();</span><br><span class="line"><span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+function fs() {
+console.log(this);
+}
+fs();
+//undefined
+</code></pre>
 </li>
 <li><p>不可在if内部声明函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(a&lt;=<span class="number">2</span>) &#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">add(); <span class="comment">//Uncaught ReferenceError: add is not defined</span></span><br><span class="line"><span class="built_in">console</span>.log(add()); <span class="comment">//非严格模式下返回2</span></span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">&quot;use strict&quot;
+var a=0;
+if(a&lt;=2) {
+function add() {
+ a++;
+ return a;
+}
+}
+add(); //Uncaught ReferenceError: add is not defined
+console.log(add()); //非严格模式下返回2
+</code></pre>
 </li>
 </ol>
 
@@ -922,6 +951,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -932,6 +967,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

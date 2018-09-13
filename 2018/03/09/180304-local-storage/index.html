@@ -85,6 +85,11 @@ web应用的本地储存常用的方法有两种，一种是利用cookie进行�
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@ web应用的本地储存常用的方法有两种，一种是利用cookie进行�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie"><span class="post-toc-number">1.</span> <span class="post-toc-text">cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cookie的特点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">cookie的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web-Storage"><span class="post-toc-number">2.</span> <span class="post-toc-text">Web Storage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-Storage的特点"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Web Storage的特点</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#cookie"><span class="post-toc-text">cookie</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cookie的特点"><span class="post-toc-text">cookie的特点</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web-Storage"><span class="post-toc-text">Web Storage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Web-Storage的特点"><span class="post-toc-text">Web Storage的特点</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ web应用的本地储存常用的方法有两种，一种是利用cookie进行�
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACYklEQVR42u3aQVLDMAwF0Nz/0rBlQcOXLLuZ8rLqDIX4hRlL+fL19dHXhYeHh4eHh4eH9zDeFV8/v3//uffTV9/J14aHh4d3kvfHVnt74/slJsvN7xutDQ8PD+8gLykGye3Xy8zK2vDw8PCexuu1v72NHg8PD++TeFVqXkgeURjw8PDwRsOI+xjiPmJIGG/OWvDw8PBi3uwAbPbz4+Z7eHh4/55XPtKUNLVxnFEdiZUPXeHh4eFt4CXtbHlrDkKE6taft+N4eHh4u3nJIqpRQl48Vh50oe7h4eHhjfLWm92ENxUHR8EuHh4e3mbeSnnIg4PewGw4a8HDw8MbzTlnw4J8i1854PXyH4CHh4d3nBe98Beb4/ul57+VNNZ4eHh4J3krmGrzXWUMFAY8PDy8UV4CSyKMpORUy8lYSo2Hh4c3xEuWu36kIGnctxQGPDw8vM0t9co4qhwZFKOKwgsAHh4e3hFetRXOY4up6GHsjQEPDw9v83nOHqwaVTQLQPWNAQ8PD2+INxUiVJcydejql7+Mh4eHd5yXs1cGYDmyWjbw8PDwdvOqJaFaDPJY4QouPDw8vCfzkmLQi197gMJjwsPDw9vMq46m1jf3HNY71oCHh4e3m1e9euHCQMSQRxV4eHh4m3m9jbt6+KA66MqbdTw8PLx38ZJikDfi6y11UjaWjg7g4eHhDfHyTTwfleWxxcasBQ8PD++tvHz7zhvxvNg0wwg8PDy8x/B64/9kuY8oDHh4eHijYcTKEpOH2xt94eHh4Z3knRyA9eKGQsyBh4eHt5n3eRceHh4eHh4eHt4Drm9DMTntUPyA9QAAAABJRU5ErkJggg==">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -909,6 +902,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -919,6 +918,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

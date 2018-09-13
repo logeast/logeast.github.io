@@ -85,6 +85,11 @@ KMP算法是搜索功能常用的一种算法。其本质就是字符串匹配�
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@ KMP算法是搜索功能常用的一种算法。其本质就是字符串匹配�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引言"><span class="post-toc-number">1.</span> <span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KMP-算法"><span class="post-toc-number">2.</span> <span class="post-toc-text">KMP 算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-问题引入"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1. 问题引入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-思路分析"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2. 思路分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-部分匹配表"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3. 部分匹配表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-next-数组"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4. next 数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-代码实现"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5. 代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文章"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考文章</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引言"><span class="post-toc-text">引言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#KMP-算法"><span class="post-toc-text">KMP 算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-问题引入"><span class="post-toc-text">1. 问题引入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-思路分析"><span class="post-toc-text">2. 思路分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-部分匹配表"><span class="post-toc-text">3. 部分匹配表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-next-数组"><span class="post-toc-text">4. next 数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-代码实现"><span class="post-toc-text">5. 代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考文章"><span class="post-toc-text">参考文章</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ KMP算法是搜索功能常用的一种算法。其本质就是字符串匹配�
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACaUlEQVR42u3aQXLjMAwEQP//08l1L7ZnCJHSppqnVFmK0TwQNIDXz59eLzw8PDw8PDw8vIfxXvF699bbrwne/ffT5MkoNjw8PLwjvC9H7Ztn1oLLt2MtNjw8PLyTvPzIbtkJ8vP3FukEDw8P75G8z0HkqWKyTXh4eHj/F6+9WOf/50F5Dw8PD++iYkRyIc4ZySX7aK0FDw8PL+blTabzfx/t7+Hh4eEFvLWVX6PbdJIkgy+x4eHh4W3mJeWD5OCeDxOslULw8PDw7uUloeeYeXFhy9AVHh4e3piXvNwOS61dr9vkdEExAg8PD2+J9+XRpXbXfAyr3UQ8PDy8k7z2UF4r3RbHelCq+BIbHh4e3mZe8jVtWHmg7dA/Hh4e3hN4yeG+VoZon5wkCTw8PLyTvLXCwaTw+jk9tIkBDw8P7y5eXhpYbOeXgwj5luHh4eHdxWuHCdotyDEXjHbh4eHhbea1V94k3DygyUa8/RQPDw9vM68dNs2Tx9qIQJEA2l8MeHh4eJfy8rb9WkEhvy7nJY/6FwMeHh7eRbx5KG1xYa3YkcSAh4eHd4a3dv1tr7x5mWMCxsPDwzvDmzSf8mGpditHLTo8PDy8zbx2QCpverXDqa941VdqPDw8vEt5a82tSZsqL3nkm46Hh4d3ktcex23yqBv/4/YYHh4e3hlemwza63Jy0LeJoahS4+Hh4W3j5dfcvDjbItsUVSQGPDw8vJt4ebh5iWHSYMPDw8N7Pm/OyEsheZECDw8P7y7evpJr0r5qYVvKuHh4eHgbGmCTIPKiRjvEgIeHh3eS9/cWHh4eHh4eHh7eA9YvS/dpBJl41yAAAAAASUVORK5CYII=">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -506,14 +499,55 @@ KMP算法是搜索功能常用的一种算法。其本质就是字符串匹配�
 <p>有一个字符串“ABC ABCDAB ABCDABCDABDE”，我想知道里面是否包含了“ABCDABD”这个字符串，应该怎么去做呢？</p>
 </blockquote>
 <p>我们称字符串“ABC ABCDAB ABCDABCDABDE”为文本串 S ，字符串“ABCDABD”为模式串 P 。并假设现在文本串 S 匹配到 i 位置，模式串 P 匹配到 j 位置。</p>
-<h3 id="2-思路分析"><a href="#2-思路分析" class="headerlink" title="2. 思路分析"></a>2. 思路分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P ABCDABD</span><br><span class="line">j 0123456</span><br></pre></td></tr></table></figure>
-<p>（1）模式串 P 的第一个字母 A 与文本串 S 的第一个字母 A 进行比较，匹配，称作 S[0] = P[0] ,依次对比得 S[1] = P[1] , S[2] = P[2] ,发现 S[3] ！= P[3] 。接着有两种选择，一是将 P 向后移动一位，重新匹配；二是根据前面的信息移动不止一位，略过一些字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">第一种选择：</span><br><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P  ABCDABD</span><br><span class="line">j  0123456</span><br><span class="line"></span><br><span class="line">第二种选择：</span><br><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P    ABCDABD</span><br><span class="line">j    0123456</span><br></pre></td></tr></table></figure></p>
-<p>（2）由第（1）步我们已经知道 S[1] ~ S[3] 不与 P[0] 相等，因此选择第二种模式会减少匹配次数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P     ABCDABD</span><br><span class="line">j     0123456</span><br></pre></td></tr></table></figure></p>
-<p>（3）我们再往后移动一位发现 S[10] 与 P[6] 有点差异，并且 AB 在字符串的头尾出现了两次，这意味着下次匹配的起点应该为尾端的 AB ，因此令 i = 8，j = 2 ，继续匹配。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P         ABCDABD</span><br><span class="line">j         0123456</span><br></pre></td></tr></table></figure></p>
-<p>（4）在 i = 10 处又不相等，继续向后移动，令 i = 10，j = 0，继续匹配。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P           ABCDABD</span><br><span class="line">j           0123456</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P            ABCDABD</span><br><span class="line">j            0123456</span><br></pre></td></tr></table></figure>
-<p>（5）一直向后匹配，到上图这里发现又出现了和第（3）步类似的情况，同样的，令 i = 15，j = 2 ，继续匹配。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P                ABCDABD</span><br><span class="line">j                0123456</span><br></pre></td></tr></table></figure></p>
-<p>现在我们找到完全匹配的字符串了，其起始位置在 S[15] 处。</p>
+<h3 id="2-思路分析"><a href="#2-思路分析" class="headerlink" title="2. 思路分析"></a>2. 思路分析</h3><pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P ABCDABD
+   j 0123456
+</code></pre><p>（1）模式串 P 的第一个字母 A 与文本串 S 的第一个字母 A 进行比较，匹配，称作 S[0] = P[0] ,依次对比得 S[1] = P[1] , S[2] = P[2] ,发现 S[3] ！= P[3] 。接着有两种选择，一是将 P 向后移动一位，重新匹配；二是根据前面的信息移动不止一位，略过一些字符串。</p>
+<pre><code>   第一种选择：
+               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P  ABCDABD
+   j  0123456
+
+   第二种选择：
+               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P    ABCDABD
+   j    0123456
+</code></pre><p>（2）由第（1）步我们已经知道 S[1] ~ S[3] 不与 P[0] 相等，因此选择第二种模式会减少匹配次数。</p>
+<pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P     ABCDABD
+   j     0123456
+</code></pre><p>（3）我们再往后移动一位发现 S[10] 与 P[6] 有点差异，并且 AB 在字符串的头尾出现了两次，这意味着下次匹配的起点应该为尾端的 AB ，因此令 i = 8，j = 2 ，继续匹配。</p>
+<pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P         ABCDABD
+   j         0123456
+</code></pre><p>（4）在 i = 10 处又不相等，继续向后移动，令 i = 10，j = 0，继续匹配。</p>
+<pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P           ABCDABD
+   j           0123456
+</code></pre><pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P            ABCDABD
+   j            0123456
+</code></pre><p>（5）一直向后匹配，到上图这里发现又出现了和第（3）步类似的情况，同样的，令 i = 15，j = 2 ，继续匹配。</p>
+<pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P                ABCDABD
+   j                0123456
+</code></pre><p>现在我们找到完全匹配的字符串了，其起始位置在 S[15] 处。</p>
 <h3 id="3-部分匹配表"><a href="#3-部分匹配表" class="headerlink" title="3. 部分匹配表"></a>3. 部分匹配表</h3><p>上面的匹配模式虽然减少了匹配次数，但也带来了一个问题，就是我们怎么量化向后移动的位数呢？为此我们引入了一个 next 数组来解决问题，在这之前，我们先来寻找一下前后缀最长公共元素的长度来完成我们的部分匹配表。</p>
 <blockquote>
 <p>TIPS：<br>前后缀：不包含最后一个或第一个字符的其他字符的组合。比如说对字符串 hope 而言，其前缀有 h，ho，hop；后缀有 ope，pe，e 。<br>部分匹配值： 前缀和后缀的最长共有元素的长度。</p>
@@ -652,16 +686,75 @@ KMP算法是搜索功能常用的一种算法。其本质就是字符串匹配�
 <p>$$  移动位数 = 失配字符所在的位置 - 失配字符对应的 next 值  $$</p>
 <p>用数学表达是表示就是</p>
 <p>$$  移动位数 = j - next[j]  $$</p>
-<p>举例来说，如下图所示，字符串“ABCDABD”的失配字符 D 对应的 j = 6，相应的 next 值为 2 ，那么它移动位数就为 6 - 2 = 4 ，即搜索的时候只要向后移动 4 位就可以到达下一个“AB”的位置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">            1         2  </span><br><span class="line">i 01234567890123456789012</span><br><span class="line">S ABC ABCDAB ABCDABCDABDE</span><br><span class="line">P     ABCDABD</span><br><span class="line">j     0123456</span><br></pre></td></tr></table></figure></p>
-<p>看到这里，我们应该可以惊喜的发现，基于“部分匹配值表”和基于“next 数组”得来的结果是一样的。对比两个公式我们可以很轻松的发现</p>
-<pre><code>   移动位数 = 已匹配的字符数 - 对应部分的部分匹配值 
-   移动位数 = 失配字符所在的位置 - 失配字符对应的 next 值
+<p>举例来说，如下图所示，字符串“ABCDABD”的失配字符 D 对应的 j = 6，相应的 next 值为 2 ，那么它移动位数就为 6 - 2 = 4 ，即搜索的时候只要向后移动 4 位就可以到达下一个“AB”的位置。</p>
+<pre><code>               1         2  
+   i 01234567890123456789012
+   S ABC ABCDAB ABCDABCDABDE
+   P     ABCDABD
+   j     0123456
+</code></pre><p>看到这里，我们应该可以惊喜的发现，基于“部分匹配值表”和基于“next 数组”得来的结果是一样的。对比两个公式我们可以很轻松的发现</p>
+<pre><code>                     移动位数 = 已匹配的字符数 - 对应部分的部分匹配值 
+                     移动位数 = 失配字符所在的位置 - 失配字符对应的 next 值
 
-   失配字符对应的 next 值 = 对应部分的部分匹配值 + 1
-=&gt; 失配字符所在的位置 = 已匹配的字符数 + 1
+                     失配字符对应的 next 值 = 对应部分的部分匹配值 + 1
+                  =&gt; 失配字符所在的位置 = 已匹配的字符数 + 1
 </code></pre><p>因此结果必然是相同的，所以其实将“部分匹配值表”当做“next 数组”来用也是可以的。</p>
-<h3 id="5-代码实现"><a href="#5-代码实现" class="headerlink" title="5. 代码实现"></a>5. 代码实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//KMP 算法</span><br><span class="line">int KMPSearch(char *s,char *p)</span><br><span class="line">&#123;</span><br><span class="line">  int sLen = strlen(s);</span><br><span class="line">  int plen = strlen(p);</span><br><span class="line">  int i = 0;</span><br><span class="line">  int j = 0;</span><br><span class="line">  //引入 next 数组</span><br><span class="line">  GetNext(char *p, int next[]);</span><br><span class="line"></span><br><span class="line">  while(i &lt; sLen &amp;&amp; j &lt; pLen)</span><br><span class="line">  &#123;</span><br><span class="line">    //当 j = -1 或者匹配成功时，都令 i++,j++</span><br><span class="line">    if( j == -1 || s[i] == p[j])</span><br><span class="line">    &#123;</span><br><span class="line">      i++;</span><br><span class="line">      j++;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">      //当 j != -1 且匹配失败时，令 i 不变，j 回退 next[j]</span><br><span class="line">      j = next[j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  //若匹配成功，则返回字符串的位置</span><br><span class="line">  if(j == pLen)</span><br><span class="line">    return i - j;</span><br><span class="line">  //若失败，则返回 -1</span><br><span class="line">  else</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//next 数组</span><br><span class="line">void GetNext(char *p, int next[])</span><br><span class="line">&#123;</span><br><span class="line">  int pLen = strlen()</span><br><span class="line">  next[0] = -1;</span><br><span class="line">  int k = -1;</span><br><span class="line">  int j = 0;</span><br><span class="line"></span><br><span class="line">  while (j &lt; pLen - 1)</span><br><span class="line">  &#123;</span><br><span class="line">    //p[k]表示前缀，p[j]表示后缀</span><br><span class="line">    if (k == -1 || p[j] ==p[k]</span><br><span class="line">   &#123;</span><br><span class="line">     k++;</span><br><span class="line">     j++;</span><br><span class="line">     next[j] = k;</span><br><span class="line">   &#125;</span><br><span class="line">   else</span><br><span class="line">   &#123;</span><br><span class="line">     k = next[k];</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
+<h3 id="5-代码实现"><a href="#5-代码实现" class="headerlink" title="5. 代码实现"></a>5. 代码实现</h3><pre><code>//KMP 算法
+int KMPSearch(char *s,char *p)
+{
+  int sLen = strlen(s);
+  int plen = strlen(p);
+  int i = 0;
+  int j = 0;
+  //引入 next 数组
+  GetNext(char *p, int next[]);
+
+  while(i &lt; sLen &amp;&amp; j &lt; pLen)
+  {
+    //当 j = -1 或者匹配成功时，都令 i++,j++
+    if( j == -1 || s[i] == p[j])
+    {
+      i++;
+      j++;
+    }
+    else
+    {
+      //当 j != -1 且匹配失败时，令 i 不变，j 回退 next[j]
+      j = next[j];
+    }
+  }
+  //若匹配成功，则返回字符串的位置
+  if(j == pLen)
+    return i - j;
+  //若失败，则返回 -1
+  else
+    return -1;
+}
+
+//next 数组
+void GetNext(char *p, int next[])
+{
+  int pLen = strlen()
+  next[0] = -1;
+  int k = -1;
+  int j = 0;
+
+  while (j &lt; pLen - 1)
+  {
+    //p[k]表示前缀，p[j]表示后缀
+    if (k == -1 || p[j] ==p[k]
+   {
+     k++;
+     j++;
+     next[j] = k;
+   }
+   else
+   {
+     k = next[k];
+   }
+  }
+}
+</code></pre><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
 <li><a href="http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html" target="_blank" rel="noopener">字符串匹配的KMP算法 阮一峰</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E5%8A%AA%E6%96%AF-%E8%8E%AB%E9%87%8C%E6%96%AF-%E6%99%AE%E6%8B%89%E7%89%B9%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">克努斯-莫里斯-普拉特算法 维基百科</a></li>
 <li><a href="http://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="noopener">从头到尾彻底理解KMP</a></li>
@@ -1054,6 +1147,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1064,6 +1163,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

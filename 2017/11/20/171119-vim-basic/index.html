@@ -85,6 +85,11 @@ Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporv
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@ Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporv
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vim简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vim简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">插入模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#普通模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">普通模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-移动和跳转"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 移动和跳转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-搜索和标记"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 搜索和标记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-即时执行操作"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. 即时执行操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可视模式"><span class="post-toc-number">4.</span> <span class="post-toc-text">可视模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令模式"><span class="post-toc-number">5.</span> <span class="post-toc-text">命令模式</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vim简介"><span class="post-toc-text">Vim简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入模式"><span class="post-toc-text">插入模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#普通模式"><span class="post-toc-text">普通模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-移动和跳转"><span class="post-toc-text">1. 移动和跳转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-搜索和标记"><span class="post-toc-text">2. 搜索和标记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-即时执行操作"><span class="post-toc-text">3. 即时执行操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可视模式"><span class="post-toc-text">可视模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令模式"><span class="post-toc-text">命令模式</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@ Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporv
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aQW7DMAwEwPz/0+21QBNnSUqCE4xPReM6Gh9EdsXHz1dfDzw8PDw8PDw8vJvxHvH15EF/fn99//8787+qrg0PDw/vDO/NVhvwqshoi2+tDQ8PD+8k79XiXt3zCna9lOunVUsIHh4e3qfwks36uv3NXxkeHh7e9/EmDXf+ZDw8PLx78pJ/+JN4N2+X85j4UNaCh4eHF/PyQ6bzPx8938PDw8MLeOWRpmIDnRSYySHZk5Xg4eHhbeblG3EvqJ0XmHwIDA8PD+8krwqbxxl55JEHwXh4eHjnedWwddWn1Qa9WRjw8PDwFvHyTfn6iGtHLNts9/Hw8PA286pf04tce8NVeQHDw8PDO8+bLH1HsJusrVAY8PDw8Jby5sdO1Ra8GoXkMDw8PLwzvGQTT0jVIarJwdtodAAPDw9v0QnRJJatNty98KIwyoCHh4d3hJds9L1xq/wF5Q13M4zAw8PDW8rLW97ep3lRmRckPDw8vPO86vhpr/3thRHNlBoPDw9vKW/+0Grw+mZbj8vMKKXGw8PDW8RLllUdrqoWnsmLw8PDwzvJqzbH1/f3isGkrcfDw8O7A6+6lHmoUQ2RR4UBDw8PbylvfvQ1iTMmY6x4eHh4Z3jVazKM1YuDy8dseHh4eJt5ve14Etfmy10wdIWHh4e3jZcHENVmeu2rbBYGPDw8vG28fIOuLjR/EfMBBTw8PLw786oRQzUgbn4jHh4e3o151TsnDXcScODh4eGd5+WDVvlW/mYpxXKyPcbFw8PD23AAlgSvq+6vBsd4eHh4Z3jfd+Hh4eHh4eHh4d3g+gUDhpBs1QRHHQAAAABJRU5ErkJggg==">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -1047,6 +1040,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1057,6 +1056,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

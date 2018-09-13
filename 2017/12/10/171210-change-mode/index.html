@@ -58,7 +58,7 @@
     <meta name="description" itemprop="description" content="
 这篇文章会讲述文件权限相关的内容，并告诉你为什么会出现“permission deny”和如何解决这个问题。
 ">
-    <meta name="keywords" content="博客,Linux,Unix">
+    <meta name="keywords" content="博客,Unix,Linux">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -84,6 +84,11 @@
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
         
 
     
@@ -220,7 +225,7 @@
     <meta property="og:description" content="
 这篇文章会讲述文件权限相关的内容，并告诉你为什么会出现“permission deny”和如何解决这个问题。
 ">
-    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="Unix"> 
+    <meta property="og:article:tag" content="Unix"> <meta property="og:article:tag" content="Linux"> 
 
     
         <meta property="article:published_time" content="Sun Dec 10 2017 15:24:17 GMT+0800">
@@ -265,7 +270,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Linux,Unix博客",
+    "keywords": ",Unix,Linux博客",
     "description": "
 这篇文章会讲述文件权限相关的内容，并告诉你为什么会出现“permission deny”和如何解决这个问题。
 ",
@@ -333,7 +338,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件属性和文件权限"><span class="post-toc-number">1.</span> <span class="post-toc-text">文件属性和文件权限</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#改变文件属性和权限"><span class="post-toc-number">2.</span> <span class="post-toc-text">改变文件属性和权限</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#符号类型"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">符号类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数字类型"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">数字类型</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件属性和文件权限"><span class="post-toc-text">文件属性和文件权限</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#改变文件属性和权限"><span class="post-toc-text">改变文件属性和权限</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#符号类型"><span class="post-toc-text">符号类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数字类型"><span class="post-toc-text">数字类型</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWElEQVR42u3aQXKDMAwFUO5/6XbbDfTLQoZknleZxgG/LiyNpOPnq9eBh4eHh4eHh4f3Mt4Rr9PH/fm2uv/6V2tnw8PDw9vD++eqbR/o+slnexbPhoeHh7eRd3asfM/Zr673XL8rPxseHh7em3nVxDoPD3h4eHjfyquCk4QbDw8P7xN5nUJt5y8vqrXg4eHhxby8ybT/89b+Hh4eHl7AK480BW2tpGibP6d8Qjw8PLxhXn4RV0sY+TPXAgMeHh7es7xOCyovHHRaaHlowcPDw5vm5Y/Liwh5ibaaoEeDCHh4eHjDvLW0NW90VZPsZLDgtio1Hh4e3k0dos5Y1dq1noxeFU6Fh4eHt5FXLQckgCQwJOw8HcfDw8Ob5lUbVNXEeq0oXP3X4OHh4b2BtwZLQks/SIyMDuDh4eHdyssv8bl2Vz6ygIeHhzfNy0sJ1THW6rWeJ+WLQ1d4eHh4N/GOxrorLe58btVa8PDw8JZ4eVsr35+Hh7WUvVDGxcPDwxvjVQuyeXG2WlCo/hYPDw9vP6+aEK8l3IsF2eKAFx4eHt5OXn5Nd8YIqkGoOpKFh4eH9yzvOrXNd1afvxZC8PDw8J7iVVPY6uWeg6uNNzw8PLydvOrKQ0UO6DfP8PDw8HbyqtdxtYTRB7eGrvDw8PDGeGvBIC80JOzBwICHh4c3xqte0NUhg05QubnWgoeHh/cQL2/wd5pe5QYbHh4e3kfxJsJJnnbj4eHh7eclxYhO6pyXLc52jpdx8fDw8AYaYBOM/I3Je/Hw8PCmed+38PDw8PDw8PDwXrB+AVrNkGzIkX+5AAAAAElFTkSuQmCC">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -501,8 +494,16 @@
 <p>这篇文章会讲述文件权限相关的内容，并告诉你为什么会出现“permission deny”和如何解决这个问题。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="文件属性和文件权限"><a href="#文件属性和文件权限" class="headerlink" title="文件属性和文件权限"></a>文件属性和文件权限</h2><p>在谈文件权限之前我们先在终端键入<code>ls -l</code>,看看会发生什么。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l</span><br><span class="line">total 40</span><br><span class="line">-rw-r--r--  1 adambee  staff   589 12  9 11:28 asset-manifest.json</span><br><span class="line">-rw-r--r--  1 adambee  staff  3758 12  9 11:28 favicon.ico</span><br><span class="line">-rw-r--r--  1 adambee  staff   538 12  9 11:28 index.html</span><br><span class="line">-rw-r--r--  1 adambee  staff   298 12  9 11:28 manifest.json</span><br><span class="line">-rw-r--r--  1 adambee  staff  3646 12  9 11:28 service-worker.js</span><br><span class="line">drwxr-xr-x  4 adambee  staff   136 12  9 11:28 static</span><br></pre></td></tr></table></figure></p>
-<p>在这里，每一行信息都包含了某个文件或目录的基本信息，我们只讨论前十个字符，即<code>-rw-r--r--</code>，依次给它们标号为1~10。</p>
+<h2 id="文件属性和文件权限"><a href="#文件属性和文件权限" class="headerlink" title="文件属性和文件权限"></a>文件属性和文件权限</h2><p>在谈文件权限之前我们先在终端键入<code>ls -l</code>,看看会发生什么。</p>
+<pre><code>$ ls -l
+total 40
+-rw-r--r--  1 adambee  staff   589 12  9 11:28 asset-manifest.json
+-rw-r--r--  1 adambee  staff  3758 12  9 11:28 favicon.ico
+-rw-r--r--  1 adambee  staff   538 12  9 11:28 index.html
+-rw-r--r--  1 adambee  staff   298 12  9 11:28 manifest.json
+-rw-r--r--  1 adambee  staff  3646 12  9 11:28 service-worker.js
+drwxr-xr-x  4 adambee  staff   136 12  9 11:28 static
+</code></pre><p>在这里，每一行信息都包含了某个文件或目录的基本信息，我们只讨论前十个字符，即<code>-rw-r--r--</code>，依次给它们标号为1~10。</p>
 <ul>
 <li>第一个字符<code>-</code>或<code>d</code>，表示了文件类型，<code>-</code>指文件，<code>d</code>指目录，后面还会遇到其他的文件类型。</li>
 <li>剩下九位我们分三组，每组三位<ul>
@@ -520,28 +521,43 @@
 <li><code>-</code>表示没有对应的权限</li>
 </ul>
 <p>举例来讲，<code>drwxr-xr-x</code>表示这是一个目录，对文件拥有者有可读可写可执行的权限，对同组的用户有可读可执行的权限，对其他用户有可读可执行的权限。</p>
-<h2 id="改变文件属性和权限"><a href="#改变文件属性和权限" class="headerlink" title="改变文件属性和权限"></a>改变文件属性和权限</h2><p>既然权限这么重要，自然学习改变权限也是很有必要了解的。在这里和前文一样，我们只讨论前十个字符的操作。<br>可以试试这条命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ chmod -x static</span><br><span class="line">$ ls -ld static</span><br><span class="line">drw-r--r--  4 adambee  staff  136 12  9 11:28 static</span><br><span class="line">$ cd static</span><br><span class="line">cd: permission denied: static</span><br></pre></td></tr></table></figure></p>
-<p>这时我们发现没有权限进入static目录了。</p>
-<p>再来试试看这个命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 755 static</span><br><span class="line">$ ls -ld static</span><br><span class="line">drwxr-xr-x  4 adambee  staff  136 12  9 11:28 static</span><br><span class="line">$ cd static</span><br></pre></td></tr></table></figure></p>
-<p>神奇的发现又可以进入static目录了。</p>
+<h2 id="改变文件属性和权限"><a href="#改变文件属性和权限" class="headerlink" title="改变文件属性和权限"></a>改变文件属性和权限</h2><p>既然权限这么重要，自然学习改变权限也是很有必要了解的。在这里和前文一样，我们只讨论前十个字符的操作。<br>可以试试这条命令：</p>
+<pre><code>$ chmod -x static
+$ ls -ld static
+drw-r--r--  4 adambee  staff  136 12  9 11:28 static
+$ cd static
+cd: permission denied: static
+</code></pre><p>这时我们发现没有权限进入static目录了。</p>
+<p>再来试试看这个命令：</p>
+<pre><code>$ chmod 755 static
+$ ls -ld static
+drwxr-xr-x  4 adambee  staff  136 12  9 11:28 static
+$ cd static
+</code></pre><p>神奇的发现又可以进入static目录了。</p>
 <p>其实以上就是我们常用来修改权限的两种方式。</p>
 <h3 id="符号类型"><a href="#符号类型" class="headerlink" title="符号类型"></a>符号类型</h3><ul>
 <li><code>+</code> 给文件或目录添加指定权限</li>
 <li><code>-</code> 删除文件或目录指定的权限</li>
 <li><code>=</code> 设置指定的权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chmod u=rwx,g=rw,o=r index.html</span><br><span class="line">$ ls -l index.html</span><br><span class="line">-rwxrw-r--  1 adambee  staff   538B 12  9 11:28 index.html</span><br></pre></td></tr></table></figure>
-<p>上面这个例子里，我们给index.html文件的所有者rwx的权限，给同组用户rw的权限，给其他用户r的权限。</p>
+<pre><code>$ chmod u=rwx,g=rw,o=r index.html
+$ ls -l index.html
+-rwxrw-r--  1 adambee  staff   538B 12  9 11:28 index.html
+</code></pre><p>上面这个例子里，我们给index.html文件的所有者rwx的权限，给同组用户rw的权限，给其他用户r的权限。</p>
 <h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><p>为了方便起见，我们用八进制数字来指定文件的权限，用每种身份的权限的数字和来表示当前权限。</p>
 <ul>
 <li><code>r</code> 4</li>
 <li><code>w</code> 2</li>
 <li><code>x</code> 1</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 000 index.html</span><br><span class="line">$ ls -l index.html</span><br><span class="line">----------  1 adambee  staff  538 12  9 11:28 index.html</span><br></pre></td></tr></table></figure>
-<p>发现我们对index.html文件没有任何操作权限。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ chmod 755 index.html</span><br><span class="line">$ ls -l index.html</span><br><span class="line">-rwxr-xr-x  1 adambee  staff   538B 12  9 11:28 index.html</span><br></pre></td></tr></table></figure>
-<p>上面这个例子里，我们给index.html文件的所有者rwx的权限，给同组用户rx的权限，给其他用户rx的权限。</p>
+<pre><code>$ chmod 000 index.html
+$ ls -l index.html
+----------  1 adambee  staff  538 12  9 11:28 index.html
+</code></pre><p>发现我们对index.html文件没有任何操作权限。</p>
+<pre><code>$ chmod 755 index.html
+$ ls -l index.html
+-rwxr-xr-x  1 adambee  staff   538B 12  9 11:28 index.html
+</code></pre><p>上面这个例子里，我们给index.html文件的所有者rwx的权限，给同组用户rx的权限，给其他用户rx的权限。</p>
 
         
     
@@ -930,6 +946,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -940,6 +962,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>

@@ -85,6 +85,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -333,7 +338,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装gulp"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装gulp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建项目目录树"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建项目目录树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置gulp"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置gulp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用gulp开发"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用gulp开发</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装gulp"><span class="post-toc-text">安装gulp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建项目目录树"><span class="post-toc-text">创建项目目录树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置gulp"><span class="post-toc-text">配置gulp</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用gulp开发"><span class="post-toc-text">使用gulp开发</span></a></li></ol>
     </ul>
     
 
@@ -389,18 +394,6 @@
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">devices other</i>
-    <span class="visuallyhidden">devices other</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-    <li class="mdl-menu__item">Read this article on other devices</li>
-    
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aS47DIBQEwNz/0jPbkUZxuvnFiYqVFTnmFQtADY+fr24PPDw8PDw8PDy8m/EecYs+/eT9v7/8f77+V1sbHh4e3hleUvT171HHl4C83xffxMPDwzvIe1bcs3cS8DVmfgnBw8PD+3Revkgk23E8PDy8b+LlwUSCzxcJPDw8vLvxkkLzuCEH3ChrwcPDw4t5+SHT+eej53t4eHh4Aa9tRTfxVYCfpQ0PDw9vNy+fiJPItZ3Wk6ChHRQ8PDy83bw2JsiXgbF4N++92FLj4eHhLeUlE267SLQRbb4dT4YSDw8PbzevPb5KupmPZWe213h4eHgnefn2ug4Ihi5XJVFFnVLj4eHhLeLNLAN5WNBeRBjc4uPh4eFt5uVR6Rh4LCzOayvO9/Dw8PAW8fIDqh1D0F7Ymopx8fDw8DYcgLWlrzpCa8PfFwOBh4eHt5mXT9ZtoNBO66viYzw8PLyTvJw0FiXMfHPxpSs8PDy8bbz8l+TNsTgjXxLw8PDwTvLGLpXOv3/dex5k4OHh4Z3ktUXkoWob+CY1RL3g4eHhHeG1n2u32nmJY0sLHh4e3rt4SYgwdnA1FuMOxhx4eHh4b+K1k3U+xc9HIS/qx8PDw9vMa1te9Nh0PzYEeHh4eCd57fHVqo11Um7yXB+A4eHh4S3i5aUnAWse7Bbh7MzCgIeHh7eNNzNBt0di82EEHh4e3qfzxrbpee9vXhjw8PDwpnn5xrrduG+8OoCHh4e37VbSWETbltIuEodiXDw8PLwNB2BjpSQRbXKlINrQ4+Hh4W3mfV/Dw8PDw8PDw8O7QfsFwn8+2qNlxkEAAAAASUVORK5CYII=">
-    
-</ul>
-
     
 
     <!-- Tags (bookmark) -->
@@ -522,17 +515,15 @@
 </ul>
 </blockquote>
 <p>下面让我们一起开启gulp使用之旅。</p>
-<h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><p>由于gulp是基于node.js的，因此我们先应该安装node.js。如果嫌npm太慢，万能的淘宝已经给我们打包好了镜像，只需要输入以下命令即可享受飞速安装的快感。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>全局安装gulp</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install gulp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在项目根目录下安装gulp，会有node_module文件夹和package.json文件出现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install gulp --save-dev</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在项目根目录下创建名为gulpfile.js的文件，这个文件将用来管理我们的任务。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch gulpfile.js</span><br></pre></td></tr></table></figure>
-</li>
+<h2 id="安装gulp"><a href="#安装gulp" class="headerlink" title="安装gulp"></a>安装gulp</h2><p>由于gulp是基于node.js的，因此我们先应该安装node.js。如果嫌npm太慢，万能的淘宝已经给我们打包好了镜像，只需要输入以下命令即可享受飞速安装的快感。</p>
+<pre><code>    $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre><ol>
+<li>全局安装gulp<pre><code> $ cnpm install gulp
+</code></pre></li>
+<li>在项目根目录下安装gulp，会有node_module文件夹和package.json文件出现。<pre><code> $ cnpm install gulp --save-dev
+</code></pre></li>
+<li>在项目根目录下创建名为gulpfile.js的文件，这个文件将用来管理我们的任务。<pre><code> $ touch gulpfile.js
+</code></pre></li>
 </ol>
 <p>到这里，我们的gulp环境就建好了，算是拿到了开启宝藏的第一把钥匙。然我们继续旅行。</p>
 <h2 id="创建项目目录树"><a href="#创建项目目录树" class="headerlink" title="创建项目目录树"></a>创建项目目录树</h2><p>以最常见的网站来解说，包含了banner，nav，slider，content和footer，我们可以构建出如下的目录树。</p>
@@ -597,9 +588,119 @@
 </li>
 </ol>
 <p>第二把钥匙到手，可以开启通向下一站的大门了。下一站，配置站。</p>
-<h2 id="配置gulp"><a href="#配置gulp" class="headerlink" title="配置gulp"></a>配置gulp</h2><p>先看看我们的配置文件gulpfile.js长什么样儿。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入gulp工具</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="comment">//载入gulp模块</span></span><br><span class="line">fileInclude = <span class="built_in">require</span>(<span class="string">'gulp-file-include'</span>),</span><br><span class="line">sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>),</span><br><span class="line">autoprefixer = <span class="built_in">require</span>(<span class="string">'gulp-autoprefixer'</span>),</span><br><span class="line">minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>),</span><br><span class="line">jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>),</span><br><span class="line">uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>),</span><br><span class="line">imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>),</span><br><span class="line">rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>),</span><br><span class="line">clean = <span class="built_in">require</span>(<span class="string">'gulp-clean'</span>),</span><br><span class="line">concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>),</span><br><span class="line">notify = <span class="built_in">require</span>(<span class="string">'gulp-notify'</span>),</span><br><span class="line">cache = <span class="built_in">require</span>(<span class="string">'gulp-cache'</span>),</span><br><span class="line">livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>)</span><br><span class="line">browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">//html文件</span></span><br><span class="line">gulp.task(<span class="string">'html'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'html/*.html'</span>)</span><br><span class="line">  .pipe(fileInclude(&#123; <span class="attr">prefix</span>: <span class="string">'@@'</span>, <span class="attr">basepath</span>: <span class="string">'@file'</span> &#125;))</span><br><span class="line">  .pipe(gulp.dest(<span class="string">'dist'</span>))</span><br><span class="line">  .pipe(notify(&#123; <span class="attr">message</span>: <span class="string">'Html tasks complete.'</span> &#125;)); <span class="comment">//返回成功提示</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//样式</span></span><br><span class="line">gulp.task(<span class="string">'style'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'scss/main.scss'</span>)</span><br><span class="line">    .pipe(sass(&#123; <span class="attr">style</span>:<span class="string">'expanded'</span> &#125;))  <span class="comment">//编译sass</span></span><br><span class="line">    .pipe(autoprefixer(<span class="string">'last 2 version'</span>,<span class="string">'safari 5'</span>, <span class="string">'ie 8'</span>, <span class="string">'ie 9'</span>, <span class="string">'opera 12.1'</span>, <span class="string">'ios 6'</span>, <span class="string">'android 4'</span>))  <span class="comment">//添加浏览器前缀</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/css'</span>))</span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;)) <span class="comment">//重命名</span></span><br><span class="line">    .pipe(minifycss()) <span class="comment">//压缩</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/css'</span>)) <span class="comment">//输出压缩文件</span></span><br><span class="line">    .pipe(notify(&#123; <span class="attr">message</span>: <span class="string">'Styles task complete.'</span> &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//脚本</span></span><br><span class="line">gulp.task(<span class="string">'script'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'js/*.js'</span>)  <span class="comment">//匹配所有js目录下的js文件</span></span><br><span class="line">    .pipe(jshint()) <span class="comment">//检测代码错误和潜在问题</span></span><br><span class="line">    .pipe(jshint.reporter(<span class="string">'default'</span>))</span><br><span class="line">    .pipe(concat(<span class="string">'main.js'</span>))  <span class="comment">//合并所有js到main.js中</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/js'</span>)) <span class="comment">//保存在dist/js文件夹下</span></span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;)) <span class="comment">//重命名</span></span><br><span class="line">    .pipe(uglify()) <span class="comment">//压缩代码</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/js'</span>)) <span class="comment">//保存压缩文件在dist/js下面</span></span><br><span class="line">    .pipe(notify(&#123; <span class="attr">message</span>: <span class="string">'Scripts task complete.'</span> &#125;)); <span class="comment">//返回成功提示</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//图片压缩</span></span><br><span class="line">gulp.task(<span class="string">'image'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'images/**/*'</span>)</span><br><span class="line">    .pipe(cache(imagemin(&#123; <span class="attr">optimizationLevel</span>: <span class="number">5</span>, <span class="attr">progressive</span>: <span class="literal">true</span>, <span class="attr">interlaced</span>: <span class="literal">true</span> &#125;)))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/images'</span>))</span><br><span class="line">    .pipe(notify(&#123; <span class="attr">message</span>: <span class="string">'Images task complete.'</span> &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清除目录重建文件</span></span><br><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">  <span class="keyword">return</span> gulp.src([<span class="string">'dist/*.html'</span>,<span class="string">'dist/css'</span>, <span class="string">'dist/js'</span>, <span class="string">'dist/images'</span>], &#123;<span class="attr">read</span>: <span class="literal">false</span>&#125;)</span><br><span class="line">    .pipe(clean());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//建立预设任务，只输入gulp时执行</span></span><br><span class="line">gulp.task(<span class="string">'default'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    gulp.start(<span class="string">'html'</span>,<span class="string">'style'</span>, <span class="string">'script'</span>, <span class="string">'image'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//监视所有文件</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'dist/*.html'</span>,[<span class="string">'html'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'dist/css/**/*'</span>,[<span class="string">'style'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'dist/js/*.js'</span>,[<span class="string">'script'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'dist/images/**/*'</span>,[<span class="string">'image'</span>]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//即时重整</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> server = livereload();</span><br><span class="line">  gulp.watch([<span class="string">'dist/**'</span>]).on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">    server.changed(file.path);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//浏览器同步</span></span><br><span class="line">gulp.task(<span class="string">'sync'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  <span class="keyword">var</span> files = [ </span><br><span class="line">    <span class="string">'dist/*.html'</span>, </span><br><span class="line">    <span class="string">'dist/css/*.css'</span>, </span><br><span class="line">    <span class="string">'dist/images/*.png'</span>, </span><br><span class="line">    <span class="string">'dist/js/*.js'</span> </span><br><span class="line">  ];</span><br><span class="line">  browserSync.init(files, &#123; </span><br><span class="line">    server: &#123; </span><br><span class="line">      baseDir: <span class="string">'./dist'</span> </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>下面我们来详细解读gulp的工作原理，gulp是通过steam流来实现整个流程的。说白了就是<code>读取=&gt;操作=&gt;输出</code> 的模式。<br>仔细搞懂下面这段代码，我们就可以掌握gulp的精髓所在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   var gulp = require(&apos;gulp&apos;);</span><br><span class="line">   var uglify = require(&apos;gulp-uglify&apos;)；</span><br><span class="line">   gulp.task(&apos;script&apos;, function () &#123; </span><br><span class="line">   	return gulp.src(&apos;js/*.js&apos;) </span><br><span class="line">   	.pipe(concat(&apos;main.js&apos;)) </span><br><span class="line">   	.pipe(rename(&#123;suffix: &apos;.min&apos;&#125;))</span><br><span class="line">	.pipe(uglify()) </span><br><span class="line">	.pipe(gulp.dest(&apos;dist&apos;)); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<blockquote>
+<h2 id="配置gulp"><a href="#配置gulp" class="headerlink" title="配置gulp"></a>配置gulp</h2><p>先看看我们的配置文件gulpfile.js长什么样儿。</p>
+<pre><code class="JavaScript">//引入gulp工具
+var gulp = require(&#39;gulp&#39;);
+//载入gulp模块
+fileInclude = require(&#39;gulp-file-include&#39;),
+sass = require(&#39;gulp-sass&#39;),
+autoprefixer = require(&#39;gulp-autoprefixer&#39;),
+minifycss = require(&#39;gulp-minify-css&#39;),
+jshint = require(&#39;gulp-jshint&#39;),
+uglify = require(&#39;gulp-uglify&#39;),
+imagemin = require(&#39;gulp-imagemin&#39;),
+rename = require(&#39;gulp-rename&#39;),
+clean = require(&#39;gulp-clean&#39;),
+concat = require(&#39;gulp-concat&#39;),
+notify = require(&#39;gulp-notify&#39;),
+cache = require(&#39;gulp-cache&#39;),
+livereload = require(&#39;gulp-livereload&#39;)
+browserSync = require(&#39;browser-sync&#39;); 
+
+//html文件
+gulp.task(&#39;html&#39;,function() {
+  return gulp.src(&#39;html/*.html&#39;)
+  .pipe(fileInclude({ prefix: &#39;@@&#39;, basepath: &#39;@file&#39; }))
+  .pipe(gulp.dest(&#39;dist&#39;))
+  .pipe(notify({ message: &#39;Html tasks complete.&#39; })); //返回成功提示
+});
+
+//样式
+gulp.task(&#39;style&#39;,function() {
+  return gulp.src(&#39;scss/main.scss&#39;)
+    .pipe(sass({ style:&#39;expanded&#39; }))  //编译sass
+    .pipe(autoprefixer(&#39;last 2 version&#39;,&#39;safari 5&#39;, &#39;ie 8&#39;, &#39;ie 9&#39;, &#39;opera 12.1&#39;, &#39;ios 6&#39;, &#39;android 4&#39;))  //添加浏览器前缀
+    .pipe(gulp.dest(&#39;dist/css&#39;))
+    .pipe(rename({suffix: &#39;.min&#39;})) //重命名
+    .pipe(minifycss()) //压缩
+    .pipe(gulp.dest(&#39;dist/css&#39;)) //输出压缩文件
+    .pipe(notify({ message: &#39;Styles task complete.&#39; }));
+});
+
+//脚本
+gulp.task(&#39;script&#39;, function () { 
+  return gulp.src(&#39;js/*.js&#39;)  //匹配所有js目录下的js文件
+    .pipe(jshint()) //检测代码错误和潜在问题
+    .pipe(jshint.reporter(&#39;default&#39;))
+    .pipe(concat(&#39;main.js&#39;))  //合并所有js到main.js中
+    .pipe(gulp.dest(&#39;dist/js&#39;)) //保存在dist/js文件夹下
+    .pipe(rename({suffix: &#39;.min&#39;})) //重命名
+    .pipe(uglify()) //压缩代码
+    .pipe(gulp.dest(&#39;dist/js&#39;)) //保存压缩文件在dist/js下面
+    .pipe(notify({ message: &#39;Scripts task complete.&#39; })); //返回成功提示
+});
+
+//图片压缩
+gulp.task(&#39;image&#39;,function() {
+  return gulp.src(&#39;images/**/*&#39;)
+    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+    .pipe(gulp.dest(&#39;dist/images&#39;))
+    .pipe(notify({ message: &#39;Images task complete.&#39; }));
+});
+
+//清除目录重建文件
+gulp.task(&#39;clean&#39;, function() {  
+  return gulp.src([&#39;dist/*.html&#39;,&#39;dist/css&#39;, &#39;dist/js&#39;, &#39;dist/images&#39;], {read: false})
+    .pipe(clean());
+});
+
+//建立预设任务，只输入gulp时执行
+gulp.task(&#39;default&#39;,function() {  
+    gulp.start(&#39;html&#39;,&#39;style&#39;, &#39;script&#39;, &#39;image&#39;);
+});
+
+//监视所有文件
+gulp.task(&#39;watch&#39;,function() {
+  gulp.watch(&#39;dist/*.html&#39;,[&#39;html&#39;]);
+  gulp.watch(&#39;dist/css/**/*&#39;,[&#39;style&#39;]);
+  gulp.watch(&#39;dist/js/*.js&#39;,[&#39;script&#39;]);
+  gulp.watch(&#39;dist/images/**/*&#39;,[&#39;image&#39;]);
+});
+
+//即时重整
+gulp.task(&#39;watch&#39;, function() {
+  var server = livereload();
+  gulp.watch([&#39;dist/**&#39;]).on(&#39;change&#39;, function(file) {
+    server.changed(file.path);
+  });
+});
+
+//浏览器同步
+gulp.task(&#39;sync&#39;, function () { 
+  var files = [ 
+    &#39;dist/*.html&#39;, 
+    &#39;dist/css/*.css&#39;, 
+    &#39;dist/images/*.png&#39;, 
+    &#39;dist/js/*.js&#39; 
+  ];
+  browserSync.init(files, { 
+    server: { 
+      baseDir: &#39;./dist&#39; 
+    } 
+  }); 
+});
+</code></pre>
+<p>下面我们来详细解读gulp的工作原理，gulp是通过steam流来实现整个流程的。说白了就是<code>读取=&gt;操作=&gt;输出</code> 的模式。<br>仔细搞懂下面这段代码，我们就可以掌握gulp的精髓所在</p>
+<pre><code>    var gulp = require(&#39;gulp&#39;);
+    var uglify = require(&#39;gulp-uglify&#39;)；
+    gulp.task(&#39;script&#39;, function () { 
+        return gulp.src(&#39;js/*.js&#39;) 
+        .pipe(concat(&#39;main.js&#39;)) 
+        .pipe(rename({suffix: &#39;.min&#39;}))
+        .pipe(uglify()) 
+        .pipe(gulp.dest(&#39;dist&#39;)); 
+    });
+</code></pre><blockquote>
 <ul>
 <li>前两行分别载入<a href="https://www.npmjs.com/search?q=gulp&amp;page=1&amp;ranking=optimal" target="_blank" rel="noopener">gulp模块</a>和用来压缩js的<code>gulp-uglify</code>模块。</li>
 <li><code>gulp.task()</code>是一个<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="noopener">gulp的API</a>用来建立任务，这里建立了一个名为<code>script</code>的任务。</li>
@@ -611,8 +712,9 @@
 </ul>
 </blockquote>
 <p>看到这里我们应该了解了gulp的工作原理了，只要再结合上面的配置文件，就可以轻松搞定最为艰难的一关了。第四把钥匙到手了，这扇门的背后，将会是一个全新的世界。</p>
-<h2 id="使用gulp开发"><a href="#使用gulp开发" class="headerlink" title="使用gulp开发"></a>使用gulp开发</h2><p>和其他应用使用起来完全相同，只需要在根目录下输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp &lt;task&gt; &lt;othertask&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  例如只要键入<code>gulp script</code>就可以执行前面我们的任务了。</p>
+<h2 id="使用gulp开发"><a href="#使用gulp开发" class="headerlink" title="使用gulp开发"></a>使用gulp开发</h2><p>和其他应用使用起来完全相同，只需要在根目录下输入</p>
+<pre><code>     $ gulp &lt;task&gt; &lt;othertask&gt;
+</code></pre><p>  例如只要键入<code>gulp script</code>就可以执行前面我们的任务了。</p>
 <p>  到这里，我们的gulp之旅就算结束了，接下来便可以开始愉快的用gulp开发了。</p>
 
         
@@ -1002,6 +1104,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -1012,6 +1120,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>
