@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            UNIX的文件管理--i node（i节点） | 
+        
+        Hexo
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="
+UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
+">
+    <meta name="keywords" content="博客,Linux,Unix">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hexo">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2017/12/15/171215-inode/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2017/12/15/171215-inode/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="UNIX的文件管理--i node（i节点） | Hexo">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
+">
+    <meta property="og:article:tag" content="Linux"> <meta property="og:article:tag" content="Unix"> 
+
+    
+        <meta property="article:published_time" content="Fri Dec 15 2017 16:01:16 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 11 2018 17:16:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2017/12/15/171215-inode/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2017/12/15/171215-inode/index.html",
+    "headline": "UNIX的文件管理--i node（i节点）",
+    "datePublished": "Fri Dec 15 2017 16:01:16 GMT+0800",
+    "dateModified": "Tue Sep 11 2018 17:16:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Adambee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "宇宙塌缩之日，将撑月亮救世"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",Linux,Unix博客",
+    "description": "
+UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#inode"><span class="post-toc-number">1.</span> <span class="post-toc-text">inode</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#硬链接"><span class="post-toc-number">2.</span> <span class="post-toc-text">硬链接</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                UNIX的文件管理--i node（i节点）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Adambee</strong>
+        <span>Dec 15, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcElEQVR42u3awVLsIBQE0Pn/n35v60Iz3ZeAUU9WlsMEDlZxseH171c/Lzw8PDw8PDw8vIfxXvHzyYvi9h9/89Wn178v+sLDw8M7wnuz1F7ykgG1b14ZGx4eHt5J3lfDSpb1pOV1j8nbrtvj4eHhPZk322pfL+6zfvHw8PB+Cm/HhjspOXh4eHhP4yX/8CchbAvIJ2h71oKHh4cX8/JDpvM/Hz3fw8PDwwt49ZWmMlyYBbhLI8TDw8PbzMsX4jxoaKOH6zZ1KIyHh4e3mdcu/UkHbZyRlI38aA0PDw9vNy+PSltYHtG2bYZ1Dw8PD+8m3qzj/KCr3WS3JWFY9/Dw8PCWee0h0yx4bYOJ9iICHh4e3knebOvcRq75p8lWu657eHh4eLfy2m5mpWL9umpUrvDw8PA28/IBtSFFG2cksJtTajw8PLybToh2dH/vZv3NSPDw8PC+lZcHvjN8PilF73h4eHgHefWLyksD+WFY/ub6AAwPDw/vJl4e3ebHVPkSn0/WUkqNh4eHdytvZbGelZP2+K0IMvDw8PA28+rLoKOgYRjIBi3fhBF4eHh423h3HUe129/Z+9/8AfDw8PAO8maL9ay05BOUTAceHh7eE3htBJCXhzyMuP7uUmHAw8PDW+DdNej177bF4NvulOHh4f153it+1oebF4A2IMbDw8M7z1uJcWdL/Gwqh4UBDw8PbxsvX6CTawErVwFWJhEPDw/vmbzoCL+crHZrjoeHh/ezeLMAd/3ALOkXDw8P7ySvHVwb3eaXq2aXBvDw8PBO8mZXnZK4oQ0pbr50hYeHh7eB9/sePDw8PDw8PDy8Bzz/AaU2xHCXGeQiAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Unix/">Unix</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=UNIX的文件管理--i node（i节点）&url=http://yoursite.com/2017/12/15/171215-inode/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=UNIX的文件管理--i node（i节点）&url=http://yoursite.com/2017/12/15/171215-inode/index.html&via=Adambee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/15/171215-inode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/15/171215-inode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=UNIX的文件管理--i node（i节点）&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/12/15/171215-inode/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>UNIX下，我们可以通过操作一个文件的inode查看和管理这个文件，通常文件系统将约1%的空间分配给了inode表。</p>
+</blockquote>
+<a id="more"></a>
+<p>通常情况下，我们通过一个文件的文件名来定位这个文件，查看文件内容就是查看保存在储存器中的数据块。其实文件还包含了一些其他的信息，例如文件的权限，长度，在磁盘中的位置和修改时间等等，我们将这些信息称为文件的元信息，而元信息在UNIX下便储存在inode中。总结来讲，文件包含了三部分，即文件名，文件内容和元信息。</p>
+<h2 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h2><p>当一个文件被创建时，系统会分配一个inode给它，这样就将文件名和inode关联起来了，我们可以将inode看做文件系统的内部名称。当用户或程序引用该文件时，系统就会通过该文件的文件名来查找相应的inode，然后通过inode来获取所需要的文件信息。也就是说在UNIX系统中文件名仅仅只是与inode相连，而不是与文件相连，这是和Windows系统中不同的一点。</p>
+<p>我们来看看inode里面具体包含了哪些信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ stat -x /bin</span><br><span class="line"></span><br><span class="line">File: &quot;/bin&quot;</span><br><span class="line">Size: 1292         FileType: Directory</span><br><span class="line">Mode: (0755/drwxr-xr-x)         Uid: (    0/    root)  Gid: (    0/   wheel)</span><br><span class="line">Device: 1,4   Inode: 420321    Links: 38</span><br><span class="line">Access: Sun Dec 10 18:02:35 2017</span><br><span class="line">Modify: Sun Sep 10 15:39:42 2017</span><br><span class="line">Change: Sun Sep 10 15:39:42 2017</span><br></pre></td></tr></table></figure></p>
+<p>我们看到inode中包含了这些信息。</p>
+<blockquote>
+<ul>
+<li>文件字节数</li>
+<li>文件类型</li>
+<li>文件权限</li>
+<li>文件的User ID</li>
+<li>文件的Group ID</li>
+<li>文件在磁盘中的位置</li>
+<li>文件的节点号</li>
+<li>文件链接数</li>
+<li>文件最后修改的时间</li>
+<li>文件最后使用（读取或执行）的时间</li>
+<li>文点自身最后改变的时间，如设置权限。</li>
+</ul>
+</blockquote>
+<p>这些信息对于文件来讲是非常重要的，如果没有这些信息，文件将被认为遭到了破坏或不可用。</p>
+<p>刚才我们用目录来展示inode，那在UNIX中目录和文件有什么区别呢？其实就本质而言，目录其实就是一个包含了其他文件和它们inode的文件。而一个普通文件只包含它自身的内容。</p>
+<h2 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h2><p>通过上面的知识我们不难得到在UNIX系统中inode和文件是一一对应的关系，但是却可以允许多个文件名指向同一个inode，同时也就链接到了同一个文件数据。我们称这种方式为硬链接。<br>硬链接有两个特点。</p>
+<ul>
+<li>只有删除了所有指向某个inode的文件名时，才会删除inode，也就是文件本身</li>
+<li>修改任何一个文件名下的内容都会影响到所有的文件名</li>
+</ul>
+<p>我们来做个实验，可以通过<code>ln</code>来创建硬链接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ ln index.html main.html</span><br><span class="line"></span><br><span class="line">$ ls -li index.html main.html</span><br><span class="line">9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 index.html</span><br><span class="line">9276987 -rw-r--r--  2 adambee  staff  137 12 10 20:51 main.html</span><br><span class="line"></span><br><span class="line">$ cat index.html </span><br><span class="line">test for inode.</span><br><span class="line"></span><br><span class="line">$ cat main.html</span><br><span class="line">test for inode.</span><br><span class="line"></span><br><span class="line">$ cat &gt;index.html</span><br><span class="line">change the content.</span><br><span class="line">&lt;C-c&gt;</span><br><span class="line"></span><br><span class="line">$ cat index.html</span><br><span class="line">change the content.</span><br><span class="line"></span><br><span class="line">$ cat main.html</span><br><span class="line">change the content.</span><br></pre></td></tr></table></figure></p>
+<p>第一列表示inode号码，第三列表示指向这个inode的链接数。发现通过<code>ln</code>命令创建的两个文件名指向同一个inode。当我们尝试修改其中一个文件名下文件时，发现另一个文件也改变了。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/02/09/180209-create-simple-ajax-require/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/10/171210-change-mode/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Adambee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        adambee08@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">20</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Adambee" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hexo
+            
+                <br>
+                
+                    <a href="#">一片月明如水</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

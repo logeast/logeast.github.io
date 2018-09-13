@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            从输入URL到页面加载发生了什么？ | 
+        
+        Hexo
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="
+输入URL后，需要找到这个URL对应的服务器，为了查询服务器地址，第一步需要实现从网址到对应ip的转换，浏览器首先依次查询自身缓存，系统缓存和路由器缓存的记录，如果没有则查询本地host文件，还没有就向DNS服务器发送域名解析请求。
+
+
+拿到域名后，浏览器通过随机端口向服务器指定端口发起TCP连接请求，通过运输层，网络层，数据链路层，物理层到达服务器，经过三次握手后建立TCP连接。
+
+
+三次握手后，就可以传输数据了，客户端将要发送的内容构建成HTTP请求报文并封装在TCP包中，通过TCP协议发送到服务器指定端口。
+
+
+服务器解析HTTP请求并按照报文格式封装成需要的HTTP对象，返回给浏览器。数据传输完毕后，就通过四次分手将客户端和服务器的连接释放。
+
+
+浏览器根据拿到的响应报文进行页面的解析和渲染。
+">
+    <meta name="keywords" content="博客,HTTP,网络">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hexo">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="从输入URL到页面加载发生了什么？ | Hexo">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+输入URL后，需要找到这个URL对应的服务器，为了查询服务器地址，第一步需要实现从网址到对应ip的转换，浏览器首先依次查询自身缓存，系统缓存和路由器缓存的记录，如果没有则查询本地host文件，还没有就向DNS服务器发送域名解析请求。
+
+
+拿到域名后，浏览器通过随机端口向服务器指定端口发起TCP连接请求，通过运输层，网络层，数据链路层，物理层到达服务器，经过三次握手后建立TCP连接。
+
+
+三次握手后，就可以传输数据了，客户端将要发送的内容构建成HTTP请求报文并封装在TCP包中，通过TCP协议发送到服务器指定端口。
+
+
+服务器解析HTTP请求并按照报文格式封装成需要的HTTP对象，返回给浏览器。数据传输完毕后，就通过四次分手将客户端和服务器的连接释放。
+
+
+浏览器根据拿到的响应报文进行页面的解析和渲染。
+">
+    <meta property="og:article:tag" content="HTTP"> <meta property="og:article:tag" content="网络"> 
+
+    
+        <meta property="article:published_time" content="Thu Mar 15 2018 23:21:04 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 11 2018 17:16:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html",
+    "headline": "从输入URL到页面加载发生了什么？",
+    "datePublished": "Thu Mar 15 2018 23:21:04 GMT+0800",
+    "dateModified": "Tue Sep 11 2018 17:16:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Adambee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "宇宙塌缩之日，将撑月亮救世"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",HTTP,网络博客",
+    "description": "
+输入URL后，需要找到这个URL对应的服务器，为了查询服务器地址，第一步需要实现从网址到对应ip的转换，浏览器首先依次查询自身缓存，系统缓存和路由器缓存的记录，如果没有则查询本地host文件，还没有就向DNS服务器发送域名解析请求。
+
+
+拿到域名后，浏览器通过随机端口向服务器指定端口发起TCP连接请求，通过运输层，网络层，数据链路层，物理层到达服务器，经过三次握手后建立TCP连接。
+
+
+三次握手后，就可以传输数据了，客户端将要发送的内容构建成HTTP请求报文并封装在TCP包中，通过TCP协议发送到服务器指定端口。
+
+
+服务器解析HTTP请求并按照报文格式封装成需要的HTTP对象，返回给浏览器。数据传输完毕后，就通过四次分手将客户端和服务器的连接释放。
+
+
+浏览器根据拿到的响应报文进行页面的解析和渲染。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DNS解析"><span class="post-toc-number">1.</span> <span class="post-toc-text">DNS解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DNS查询过程"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">DNS查询过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#域名系统DNS"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">域名系统DNS</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TCP连接"><span class="post-toc-number">2.</span> <span class="post-toc-text">TCP连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五层协议体系结构"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">五层协议体系结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP和UDP"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">TCP和UDP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三次握手"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">三次握手</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#发送HTTP请求"><span class="post-toc-number">3.</span> <span class="post-toc-text">发送HTTP请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTTP请求报文格式"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">HTTP请求报文格式</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器处理请求并返回报文"><span class="post-toc-number">4.</span> <span class="post-toc-text">服务器处理请求并返回报文</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTTP响应报文格式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">HTTP响应报文格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP四次挥手"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">TCP四次挥手</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器解析和渲染"><span class="post-toc-number">5.</span> <span class="post-toc-text">浏览器解析和渲染</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                从输入URL到页面加载发生了什么？
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Adambee</strong>
+        <span>Mar 15, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACy0lEQVR42u3aUW7cMAwE0Nz/0u0B2t2dIY12IT1/BYlj62mBMOTo59eV1w82NjY2NjY2Njb2V7J/4uvP33r/hL+8+MU975+fv/HDmrGxsbGPZn/40/+W8Qr21HOSbYqeiY2NjX0BO3lNUlreLyUveK+2sl0zNjY2Nvare94XrbZVyBsbbGxsbOyn2Pk97Z1JScPGxsbGng1okvvb4VTbrvyHWRo2Njb217PztuF7vv6n+TY2Njb2F7P3RahtG9qnJc1JtHJsbGzsQ9mzEU/SGOxHVLPgARsbG/tmdsKYUWcjqmfvxMbGxj6V/f6f/lkZmxXCNsrNFdjY2Nh3svdHbWZx7Gw9ddCLjY2NfRy7fUQbuM4GVUlUUJRbbGxs7AvYm4duguF8FLU5BoqNjY19Kjt5XPLTdoP21OTjwcbGxr6ZnQzu8xH//jvtaAkbGxv7HnZbKpKC0RbFFpmvExsbG/sG9mxxbUzbktqDm6szp9jY2NhHsNvDOsMXx/e0W7MaKmFjY2Mfx05GS7Mty3lJzLw6fImNjY19ELs9djPbplmcnLBXszRsbGzsg9ibGLVtDPKt2QQY2NjY2DezZwd6NtFCsmXJVQyVsLGxsQ9it2OaWZDQBgBtacTGxsbGzgvJsy1Ejpm1PdjY2Ni3saO4dM1rY918s4qhEjY2Nvah7DxebQdAeZDchhaPtSLY2NjYx7E3BWk2otq3JR9KLzY2NvYF7ASfB8PtRrQfRv0hYWNjYx/Kbq/Z6CffxFmhikomNjY29qHstjDkTcssHs7Dg7ylwcbGxr6B3RatTXw7ixNm24eNjY19Gzsf2efBcL70Nmyuiy42NjY2dntEZjHQb4OHqKRhY2NjY4+KXN7kzJBFc4KNjY19AXu/uGi4Uw6SNgEwNjY29j3stmFIjsjMWpfkw3hsqISNjY19BPueCxsbGxsbGxsbG/trrt8Q2TQ23HEOeAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/HTTP/">HTTP</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/网络/">网络</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=从输入URL到页面加载发生了什么？&url=http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=从输入URL到页面加载发生了什么？&url=http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html&via=Adambee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=从输入URL到页面加载发生了什么？&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/03/15/180315-what-happened-when-enter-an-URL/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>输入URL后，需要找到这个URL对应的服务器，为了查询服务器地址，第一步需要实现从网址到对应ip的转换，浏览器首先依次查询自身缓存，系统缓存和路由器缓存的记录，如果没有则查询本地host文件，还没有就向DNS服务器发送域名解析请求。</p>
+</blockquote>
+<blockquote>
+<p>拿到域名后，浏览器通过随机端口向服务器指定端口发起TCP连接请求，通过运输层，网络层，数据链路层，物理层到达服务器，经过三次握手后建立TCP连接。</p>
+</blockquote>
+<blockquote>
+<p>三次握手后，就可以传输数据了，客户端将要发送的内容构建成HTTP请求报文并封装在TCP包中，通过TCP协议发送到服务器指定端口。</p>
+</blockquote>
+<blockquote>
+<p>服务器解析HTTP请求并按照报文格式封装成需要的HTTP对象，返回给浏览器。数据传输完毕后，就通过四次分手将客户端和服务器的连接释放。</p>
+</blockquote>
+<blockquote>
+<p>浏览器根据拿到的响应报文进行页面的解析和渲染。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h2><blockquote>
+<p>输入URL后，需要找到这个URL对应的服务器，为了查询服务器地址，第一步需要实现从网址到对应ip的转换，浏览器首先依次查询自身缓存，系统缓存和路由器缓存的记录，如果没有则查询本地host文件，再没有就向DNS服务器发送域名解析请求。</p>
+</blockquote>
+<h3 id="DNS查询过程"><a href="#DNS查询过程" class="headerlink" title="DNS查询过程"></a>DNS查询过程</h3><ol>
+<li>浏览器查询自身缓存，系统缓存，路由器缓存</li>
+<li>查询本地host文件</li>
+<li>发送域名解析请求查询DNS服务器<br>a. 在本地域名服务器中查询<a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a><br>b. 向根域名服务器发送查询请求<br>c. 向com域名服务器查询<br>d. 向google.com域名服务器查询，查询到结果</li>
+<li>缓存到本地，供下次查询</li>
+</ol>
+<h3 id="域名系统DNS"><a href="#域名系统DNS" class="headerlink" title="域名系统DNS"></a>域名系统DNS</h3><p>DNS能够将互联网的主机名转换成ip地址，为了减少开销，DNS是以UDP用户数据报的形式发送解析请求的。</p>
+<p>域名解析过程中有两种查询方式。</p>
+<ol>
+<li>递归查询<br>类似主机向服务器A发查询请求，若未找到则由服务器A向服务器B发起查询，未找到再向服务器C发起查询请求，以此类推，最后再将查询结果依次经过服务器C，服务器B，服务器A返回给主机的查询模式。</li>
+</ol>
+<p>由于本地域名服务器距离主机一般只有几个路由的距离，主机向本地域名服务器查询一般采用递归查询。</p>
+<ol start="2">
+<li>迭代查询<br>类似服务器A向服务器B发查询请求，若未找到则将查询结果返回给服务器A，由服务器A继续向服务器C发送请求，以此类推，最后得到查询结果的查询模式。</li>
+</ol>
+<p>本地域名服务器向根域名服务器的查询一般采用迭代查询。</p>
+<h2 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h2><blockquote>
+<p>浏览器通过随机端口向服务器指定端口发起TCP连接请求，通过运输层，网络层，数据链路层，物理层到达服务器，经过三次握手后建立TCP连接。</p>
+</blockquote>
+<h3 id="五层协议体系结构"><a href="#五层协议体系结构" class="headerlink" title="五层协议体系结构"></a>五层协议体系结构</h3><ol>
+<li>应用层：以报文的方式通过应用进程间的交互完成特定网络应用。常见的应用层协议有域名系统DNS，HTTP协议等。</li>
+<li>运输层：为应用层的报文段或用户数据报提供传输服务。运输层的协议有TCP协议和UDP协议。</li>
+<li>网络层：将运输层的报文段或用户数据报封装成分组，以分组(又称为IP数据报)的形式在网络中转发。</li>
+<li>数据链路层：将网络层的IP数据报封装成帧，在两个相邻结点(路由器或其他传输媒体)之间传输。</li>
+<li>物理层：在链接各种计算机的传输媒体之间传输数据比特流。</li>
+</ol>
+<h3 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h3><p>TCP提供面向连接的，可靠的数据传输服务。以报文段的形式传输。<br>UDP提供无连接的，尽最大努力的数据传输服务。以用户数据报的形式传输。</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><ol>
+<li>第一次握手：客户端进程发送连接请求报文段给服务器，客户端进程进入sync-sent(同步已发送)状态。</li>
+<li>第二次握手：服务器收到请求报文段，如果同意建立连接则向客户端发送确认报文段，服务器进程进入sync-rcvd(同步收到)状态。</li>
+<li>第三次握手：客户端进程收到服务器的确认后，再给服务器进程发送确认。</li>
+</ol>
+<p>第三次握手的原因是为了防止已失效的连接请求报文段突然又传回给服务器进程从而产生错误。假设客户端发送第一次连接请求由于网络滞留了，于是客户端又发送了一次请求并成功建立连接，数据传输完毕后就释放了连接。在释放连接后的某个时间段内客户端的第一次报文段又到达了服务器并被服务器进程确认，如果没有第三次握手，则服务器会一直等待客户端发送数据，从而浪费许多资源。</p>
+<h2 id="发送HTTP请求"><a href="#发送HTTP请求" class="headerlink" title="发送HTTP请求"></a>发送HTTP请求</h2><blockquote>
+<p>三次握手后，就可以传输数据了，客户端将要发送的内容构建成HTTP请求报文并封装在TCP包中，通过TCP协议发送到服务器指定端口。</p>
+</blockquote>
+<h3 id="HTTP请求报文格式"><a href="#HTTP请求报文格式" class="headerlink" title="HTTP请求报文格式"></a>HTTP请求报文格式</h3><p>HTTP请求报文一般由请求行和请求头组成，请求头用来说明报文主体的一些信息。请求报文和响应报文的区别就是开始行的不同。</p>
+<p>请求报文中的开始行称为请求行，HTTP请求行只有三个内容，即方法，URL和HTTP版本。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET sample.jsp HTTP/1.1</span><br></pre></td></tr></table></figure></p>
+<p>  请求方法有：</p>
+<ul>
+<li>GET 请求读取URL中的信息</li>
+<li>POST 向指定资源提交数据，如提交表单，上传文件等、</li>
+<li>HEAD 请求URL所标志信息的首部</li>
+<li>DELETE 请求服务器删除指定的页面</li>
+<li>OPTIONS 允许客户端查看服务器性能</li>
+<li>PUT 用从客户端向服务器传送的数据来替换指定文档的内容</li>
+<li>CONNECT 用于代理服务器</li>
+<li>TRACK 用于测试和诊断</li>
+</ul>
+<h2 id="服务器处理请求并返回报文"><a href="#服务器处理请求并返回报文" class="headerlink" title="服务器处理请求并返回报文"></a>服务器处理请求并返回报文</h2><blockquote>
+<p>服务器解析HTTP协议并按照报文格式封装成需要的HTTP请求对象，返回给浏览器。数据传输完毕后，就通过四次分手将客户端和服务器的连接释放。</p>
+</blockquote>
+<h3 id="HTTP响应报文格式"><a href="#HTTP响应报文格式" class="headerlink" title="HTTP响应报文格式"></a>HTTP响应报文格式</h3><p>HTTP响应报文一般由状态行，响应头和响应报文组成，响应头用来说明报文主体的一些信息。</p>
+<p>响应报文中的开始行称为状态行，HTTP状态行也只有三个内容，即HTTP版本，状态码和解释状态码的简单短语。  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br></pre></td></tr></table></figure>
+<p>  状态码的含义：  </p>
+<ul>
+<li>1xx 服务器收到请求  </li>
+<li>2xx 请求成功，开始处理  </li>
+<li>3xx 重定向  </li>
+<li>4xx 客户端错误  </li>
+<li>5xx 服务器错误  </li>
+</ul>
+<h3 id="TCP四次挥手"><a href="#TCP四次挥手" class="headerlink" title="TCP四次挥手"></a>TCP四次挥手</h3><ol>
+<li>第一次挥手：客户端发送释放连接请求，不再发送数据，但还可接收数据。</li>
+<li>第二次挥手：服务器收到连接释放的报文段后即发出确认，这样从客户端到服务器的连接就释放了。</li>
+<li>第三次挥手：等所有数据传输完毕后，服务器发送终止请求给客户端，表示不再传输数据给客户端。</li>
+<li>第四次挥手：最后客户端收到服务器关闭请求后发送确认报文段，完成四次挥手。</li>
+</ol>
+<h2 id="浏览器解析和渲染"><a href="#浏览器解析和渲染" class="headerlink" title="浏览器解析和渲染"></a>浏览器解析和渲染</h2><blockquote>
+<p>浏览器根据拿到的响应报文进行解析和页面的渲染。</p>
+</blockquote>
+<ol>
+<li><p>构建DOM树<br>HTML文档会被解析成一棵以document为根的DOM树，解析过程中如果遇到JavaScript，则会暂停解析并传输下载相应的文件造成阻塞，故推荐将JavaScript脚本放在HTML文件的后面。</p>
+</li>
+<li><p>构建CSSSOM树<br>浏览器根据外部样式，内部样式和内联样式来解析CSS，构建CSSSOM树。</p>
+</li>
+<li><p>构建渲染树和布局<br>DOM树和CSSOM树构建完毕后会融合成渲染树，然后浏览器会确认页面各元素的位置。</p>
+</li>
+<li><p>页面绘制和优化<br>浏览器根据布局结果进行页面的绘制，并优化页面内容，减小CPU消耗。</p>
+</li>
+</ol>
+<p>渲染结束后整个页面就呈现在我们面前了。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/05/180505-five-people-in-my-life/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/09/180306-css-center/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Adambee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        adambee08@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">20</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Adambee" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hexo
+            
+                <br>
+                
+                    <a href="#">一片月明如水</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

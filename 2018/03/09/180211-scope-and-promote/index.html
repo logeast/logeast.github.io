@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            JavaScript作用域和提升 | 
+        
+        Hexo
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="
+作用域是一套用于确定在何处以及如何查找变量的规则。赋值操作会导致LHS查询，获取变量的值得操作会导致RHS查询。
+">
+    <meta name="keywords" content="博客,JavaScript">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hexo">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/03/09/180211-scope-and-promote/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/03/09/180211-scope-and-promote/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JavaScript作用域和提升 | Hexo">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+作用域是一套用于确定在何处以及如何查找变量的规则。赋值操作会导致LHS查询，获取变量的值得操作会导致RHS查询。
+">
+    <meta property="og:article:tag" content="JavaScript"> 
+
+    
+        <meta property="article:published_time" content="Fri Mar 09 2018 13:36:07 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 11 2018 17:16:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html",
+    "headline": "JavaScript作用域和提升",
+    "datePublished": "Fri Mar 09 2018 13:36:07 GMT+0800",
+    "dateModified": "Tue Sep 11 2018 17:16:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Adambee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "宇宙塌缩之日，将撑月亮救世"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",JavaScript博客",
+    "description": "
+作用域是一套用于确定在何处以及如何查找变量的规则。赋值操作会导致LHS查询，获取变量的值得操作会导致RHS查询。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#作用域是什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">作用域是什么</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用域"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用域链"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">作用域链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LHS和RHS"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">LHS和RHS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异常"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">异常</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#词法作用域"><span class="post-toc-number">2.</span> <span class="post-toc-text">词法作用域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#欺骗词法–eval方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">欺骗词法–eval方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#欺骗词法–with方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">欺骗词法–with方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数作用域和块作用域"><span class="post-toc-number">3.</span> <span class="post-toc-text">函数作用域和块作用域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数作用域"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">函数作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块作用域–try-catch"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">块作用域–try..catch</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块作用域–let"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">块作用域–let</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#块作用域–const"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">块作用域–const</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数和变量提升"><span class="post-toc-number">4.</span> <span class="post-toc-text">函数和变量提升</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                JavaScript作用域和提升
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Adambee</strong>
+        <span>Mar 09, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0ElEQVR42u3aQY7jMAwEwPn/p2cfMIi3m/TuJHL5FAS2rNKlQdJf34+8vrCxsbGxsbGxsbHfkv0VXz+ferXCqzuLLZZvjPaMjY2NfTS73UQCvl6nZez3jI2Njf0E9quXvfr986nr/6/vucbkR4aNjY2NnbCT19TbCqILGxsbG/tfB1jyVFKEtCUNNjY2NvamGZS3n/ZjgF/rpWFjY2O/PTtv0L/P7/8638bGxsZ+Y/bmY5r9AKBdYbVzbGxs7EPZeTBcH8QrQFJstG8f7hMbGxv7UHa+0OyeuxpG7fFhY2NjP429+exmEzN5cdIGZNFUwsbGxj6CPcPMImdW5CQtrWLQi42NjX0Qe1ZytNvKV2vD6Yb5NjY2NvaHs5OWTV665MVGPgxug7MeD2BjY2Mfwc4HBrNnhw390Qp1Lw0bGxv7w9l5nMwipI6Z0Wi5Hg9gY2NjH8fOr00Z045v26P/yz6xsbGxH8C+K37aUW4CaJtT2NjY2M9kz0aweXHS3pmXIqv5NjY2NvaHs9uG0aZJlLy3LV2KITQ2Njb20ezNtmZFwiwmZ20vbGxsbOy2CNk8dX2UsxIIGxsb+2x29NniTc2gffi1x4SNjY39HPYM337Es/mYMg+8eiqCjY2NfRA7XyLZxCwO8zZWHWnY2NjYD2bPwmMWRfmYuR45Y2NjYx/NTjD5732Rk++naI1hY2NjP5idFx77ciIZDCRtrBsCDBsbG/sgdh5Us89xNu2qIuSwsbGxD2W3VzsSyEuRu+IwCjBsbGzsg9htMFy/+K7m1GZQsRr0YmNjY38sexZas+ZOfnzJykkLDBsbG/s57E17aFNytHf+Wi8NGxsb+zj2rCDJP9aZDSGwsbGxse8a9M4KjzaWipWxsbGxH8BOmkpJ/OTrXzeDNqMLbGxs7Kex22bNrD3UgpOIyosfbGxs7FPZz7mwsbGxsbGxsbGx3+b6A0HtpLeLSaNJAAAAAElFTkSuQmCC">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript作用域和提升&url=http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript作用域和提升&url=http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html&via=Adambee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=JavaScript作用域和提升&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/03/09/180211-scope-and-promote/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>作用域是一套用于确定在何处以及如何查找变量的规则。赋值操作会导致LHS查询，获取变量的值得操作会导致RHS查询。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="作用域是什么"><a href="#作用域是什么" class="headerlink" title="作用域是什么"></a>作用域是什么</h2><p>在了解作用域之前，先简单认识一下JavaScript的编译原理。</p>
+<blockquote>
+<p>传统编译语言的流程中，程序的源码在执行前会经过三个步骤，称这个过程为编译。</p>
+<ol>
+<li>分词: 词法分析<br>这个过程将字符串分解成有意义的代码块。</li>
+<li>解析: 语法分析<br>这个过程将词法单元转换成一个由元素逐级嵌套的代表了程序语法结构的树。</li>
+<li>代码生成<br>这个过程机会将上面生成的树转换为可执行的代码。</li>
+</ol>
+</blockquote>
+<p>对于JavaScript来讲，编译过程与上面类似，但是它的大部分编译是发生在代码执行前一瞬间的。</p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域负责收集并维护由所有变量组成的查询，并确定一套规则来判断当前代码对这些变量的访问权限。</p>
+<p>对于<code>var a = 2;</code>而言，简单来讲，编译器首先在当前作用域中声明一个变量a，然后在运行时引擎会从当前作用域中查找变量a，再然后将2赋值给a。</p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>每个函数都有自己的执行环境，当一个函数嵌套在另一个函数或块中时，就会形成一个作用域链。作用域链的前端即为当前执行环境，全局执行环境的变量即作用域链的顶端。在当前作用域中找不到变量时，引擎就会沿着作用域链一级级向上查询，直到找到为止。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a*b;</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">3</span>); <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中，foo的作用域中没有变量b，要对其进行引用需要向上一级查找。</p>
+<h3 id="LHS和RHS"><a href="#LHS和RHS" class="headerlink" title="LHS和RHS"></a>LHS和RHS</h3><p>LHS和RHS是引擎进行变量查询的两种方式。<br>LHS表示查询赋值操作的目标是谁；RHS表示查询谁是赋值操作的源头。换句话说，RHS查询就是查找某个变量的值，LHS查询是寻找到这个变量的容器本身，从而可以对其赋值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>对上面的例子进行分析：</p>
+<blockquote>
+<ol>
+<li>要执行foo，需要知道其赋值操作的源头，进行RHS引用;</li>
+<li>接下来把2赋值给a，需要进行一次LHS引用，这是一个隐式变量分配;</li>
+<li>对console进行RHS引用，console是个内置对象，有log(..)方法;</li>
+<li>确认a的值，进行一次RHS查询，然后将a的值传递进log(..)方法。</li>
+</ol>
+</blockquote>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>如果RHS查询在所有作用域链中都找不到所需的变量时，引擎就会抛出ReferenceError异常。如果RSH查询找到目标变量，但你尝试对其进行非法操作时，引擎会抛出TypeError异常。<br>如果LSH查询在所有作用域链中都找不到所需的变量时，就会在全局作用域中创建该变量并返还给引擎。</p>
+<blockquote>
+<p>注意:<br>严格模式下禁止自动或隐式创建变量，LSH查询失败时同样返回ReferenceError异常。</p>
+</blockquote>
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p>作用域一般有两种工作模型，一种是为大多数语言所使用的词法作用域，另一种是动态作用域。<br>词法作用域就是定义在词法阶段的作用域。词法作用域是由书写代码时函数声明的位置决定的。作用域一旦给定基本上会保持不变。当然也会有一些欺骗词法的方法，但一般不推荐使用，欺骗作用域会导致性能下降。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a</span>) </span>&#123; <span class="comment">//全局作用域，只有一个foo标识符</span></span><br><span class="line">  <span class="keyword">var</span> b = a * <span class="number">2</span>; <span class="comment">//包含foo的作用域，有a,bar,b三个表示符</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">c</span>) </span>&#123; <span class="comment">//包含着bar的作用域，只有一个c标识符</span></span><br><span class="line">    <span class="built_in">console</span>.log(a,b,c);</span><br><span class="line">  &#125;</span><br><span class="line">  bar(b*<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>上面的例子中有三个作用域，可以看做三个气泡。</p>
+<h3 id="欺骗词法–eval方法"><a href="#欺骗词法–eval方法" class="headerlink" title="欺骗词法–eval方法"></a>欺骗词法–eval方法</h3><p>eval()函数会接收一个字符串作为参数，并将其中的内容视为代码片段进行执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">str, a</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">eval</span>(str); <span class="comment">//欺骗</span></span><br><span class="line">  <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="string">"var b=1"</span>, <span class="number">2</span>); <span class="comment">//2 1</span></span><br></pre></td></tr></table></figure>
+<p>严格模式下，在eval()创建的变量不能被调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">str, a</span>) </span>&#123;</span><br><span class="line"><span class="meta"> "use strict"</span>;</span><br><span class="line">  <span class="built_in">eval</span>(str); <span class="comment">//欺骗</span></span><br><span class="line">  <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="string">"var b=1"</span>, <span class="number">2</span>); <span class="comment">//ReferenceError: b is not defined</span></span><br></pre></td></tr></table></figure>
+<p>在程序中动态生成代码将造成不确定性的结果，可能会造成性能上的损失。</p>
+<h3 id="欺骗词法–with方法"><a href="#欺骗词法–with方法" class="headerlink" title="欺骗词法–with方法"></a>欺骗词法–with方法</h3><p>with()将一个对象的引用当做作用域来处理，将对象的属性当做作用域的标识符来处理，从而创建一个新的作用域。这种方法也会使引擎无法在编译时对作用域进行优化从而造成性能上的损失。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a:<span class="number">1</span>,</span><br><span class="line">  b:<span class="number">2</span>,</span><br><span class="line">  c:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方便调用</span></span><br><span class="line"><span class="keyword">with</span>(obj) &#123;</span><br><span class="line">  a = <span class="number">3</span>;</span><br><span class="line">  b = <span class="number">4</span>;</span><br><span class="line">  c = <span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>严格模式下with()被完全禁止。</p>
+<h2 id="函数作用域和块作用域"><a href="#函数作用域和块作用域" class="headerlink" title="函数作用域和块作用域"></a>函数作用域和块作用域</h2><p>前面讨论了作用域是相互嵌套并包含了标识符(变量，函数)的容器，并提到了词法作用域中的两种欺骗词法，下面讨论js中常见的生成作用域的其他方法。</p>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>属于这个函数的全部变量可以在整个函数内部或其嵌套的作用域内部使用，这即为函数的作用域。</p>
+<ol>
+<li>隐藏内部实现<br>函数作用域可以将声明在该函数内部的变量或函数隐藏起来，从而实现良好的设计模式。在模块和对象的API设计中，这种方法很常见也很实用。<br>下面是一个利用对象全局命名空间来规避冲突的方法。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AUniqueName = &#123;</span><br><span class="line">  doSomething: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;,</span><br><span class="line">  doAnotherThing: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>立即执行函数表达式(IIFE)<br>很多时候我们希望函数不需要函数名或者函数名不会污染所在的作用域，并且能够自动执行。这时我们可以使用立即执行函数表达式(IIFE)来实现。<code>(function() {..})();</code> 就是一个IIFE，用一对括号将函数包裹使其变成表达式，再用另一对括号立即执行这个函数。</li>
+</ol>
+<blockquote>
+<ul>
+<li>如果function是声明中的第一个词，那么就是函数声明，否则就是一个函数表达式，函数声明不能匿名，表达式则可以。</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeoutHander</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//函数表达式</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>IIFE进阶用法:</p>
+<ol>
+<li>把他们当做函数调用并传递参数进去。</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  a:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>, <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params">global</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a =<span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//3</span></span><br><span class="line">  <span class="built_in">console</span>.log(global.a); <span class="comment">//1</span></span><br><span class="line">&#125;)(foo);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的例子中，将foo对象的引用传递进去，但将参数命名为global。</p>
+<ol start="2">
+<li>倒置代码的运行顺序，将需要运行的函数放在第二位。</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">  a:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>, <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">  res(foo);</span><br><span class="line">&#125;)(<span class="function"><span class="keyword">function</span> <span class="title">def</span>(<span class="params">global</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//3</span></span><br><span class="line">  <span class="built_in">console</span>.log(global.a); <span class="comment">//1</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>函数表达式def定义在片段的第二部分，然后当做参数传递到IIFE函数定义的第一部分。然后参数res（也就是传进去的函数def)被调用，并将foo传入当做global的参数。</p>
+</blockquote>
+<h3 id="块作用域–try-catch"><a href="#块作用域–try-catch" class="headerlink" title="块作用域–try..catch"></a>块作用域–try..catch</h3><p>ES3中规定try…catch的catch会创建一个块级作用域，在其中声明的变量仅在catch内部有效。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err); <span class="comment">//正常执行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(err); <span class="comment">//ReferenceError</span></span><br></pre></td></tr></table></figure>
+<h3 id="块作用域–let"><a href="#块作用域–let" class="headerlink" title="块作用域–let"></a>块作用域–let</h3><p>ES6中引入了let关键字，可以将变量绑定到任意的作用域中。let将其声明的变量隐式的放到了它所在的块作用域中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(i); <span class="comment">//ReferenceError</span></span><br></pre></td></tr></table></figure>
+<p>用{..}可以显式的声明变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError</span></span><br></pre></td></tr></table></figure>
+<h3 id="块作用域–const"><a href="#块作用域–const" class="headerlink" title="块作用域–const"></a>块作用域–const</h3><p>ES6中引入了const关键字，同样可以用来创建块作用域，但其值为常量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//ReferenceError</span></span><br></pre></td></tr></table></figure>
+<p>作用域可以总结为一句，声明在这个作用域中的变量都将作用在这个作用域中。</p>
+<h2 id="函数和变量提升"><a href="#函数和变量提升" class="headerlink" title="函数和变量提升"></a>函数和变量提升</h2><p>作用域中的声明将在代码本身执行之前首先处理，可以将这个过程想象成所有的声明(变量和函数)都会被移动到各自作用域的前端，这个过程称为提升。</p>
+<ol>
+<li>先有声明后有赋值。只有函数和变量会进行提升，函数表达式和赋值都留在原地。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p>上面这段代码，编译器将会把声明<code>var a;</code>提升到顶部，首先进行处理，即按照如下的顺序进行处理。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>只有声明本身会被提升，赋值和其他运行逻辑会停留在原地。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>; <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<p>编译器把<code>var a = 2</code>视为两行代码，即<code>var a;</code>和<code>a = 2;</code>，然后将<code>var a;</code>提升到顶部，首先进行处理，赋值操作<code>a = 2</code>留在原地。即编译器将会按照下面的形式处理这段代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//undefined</span></span><br><span class="line">a = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>每个作用域都会在自己的作用域范围内进行提升操作。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">foo();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//undefined</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码块中，全局作用域中的函数声明会被提升，foo作用域中的<code>var a;</code>也会被提升。即按照下面的顺序进行执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//undefined</span></span><br><span class="line">  a = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<p>函数首先会被提升，然后才是变量。要避免重复声明，当普通声明和函数声明混合在一起的时候，容易造成混乱。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/03/09/180304-local-storage/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/02/10/180210-use-setict-mode/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Adambee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        adambee08@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">20</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Adambee" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hexo
+            
+                <br>
+                
+                    <a href="#">一片月明如水</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

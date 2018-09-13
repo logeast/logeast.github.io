@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            svg多线条动画实战 | 
+        
+        Hexo
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="
+svg 多线条动画做起来挺容易的，但也有一些需要留意的地方，这里记录一下。
+">
+    <meta name="keywords" content="博客,css,svg">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hexo">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/23/180823-svg多线条动画实战/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2018/08/23/180823-svg多线条动画实战/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="svg多线条动画实战 | Hexo">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+svg 多线条动画做起来挺容易的，但也有一些需要留意的地方，这里记录一下。
+">
+    <meta property="og:article:tag" content="css"> <meta property="og:article:tag" content="svg"> 
+
+    
+        <meta property="article:published_time" content="Thu Aug 23 2018 19:59:33 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 11 2018 17:16:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html",
+    "headline": "svg多线条动画实战",
+    "datePublished": "Thu Aug 23 2018 19:59:33 GMT+0800",
+    "dateModified": "Tue Sep 11 2018 17:16:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Adambee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "宇宙塌缩之日，将撑月亮救世"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",css,svg博客",
+    "description": "
+svg 多线条动画做起来挺容易的，但也有一些需要留意的地方，这里记录一下。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-单个线条动画"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 单个线条动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-多个线条依次出现动画"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 多个线条依次出现动画</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-多线条依次消失动画"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 多线条依次消失动画</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                svg多线条动画实战
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Adambee</strong>
+        <span>Aug 23, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACz0lEQVR42u3aUY4iMQwEUO5/6d0DrOitstGISV5/IRoy/YI0Jdt5/bnyemFjY2NjY2NjY2N/JfsVX2+Xi+8+v373zr/rz54ZGxsb+2z2f/71j9jPmOcVnrd79szY2NjYN7DfBUASNlExMArIPPyenwobGxsbO9mCtmBIvpVsATY2Njb2p9h5mZFsUB5m2NjY2NhtGTD8w4staIsfbGxs7NvYednwPa9/dL6NjY2N/cXs9koianPcJx8P10+OjY2NfSg7D4bk4dpB72wMPDwkio2NjX0o+zkkcljebJqt34YoNjY29m3sFj8rD5ICYxOZw6YSNjY29hHsdgSbh8osbJIWVX14CBsbG/tQ9uyoTd7unzWhnqn5ABgbGxv7BvamhbR/0Lb9NGtCYWNjY5/N/lSQzJpH+43IfzBsbGzs29j5ACCJqwSfrJAXP9jY2Ni3sZOg2txtN66N2OiT2NjY2IeykyKkLR4SwObu86bXhy+xsbGxD2LPCobkuGRy7CZvY7V3sbGxsW9j582aT0XObIU6PrGxsbEPZSet/Pb9ZOX885s4xMbGxr6BvRnutodp8tFyG1HRISFsbGzso9ntwZp8wJBH1Kb8iH4qbGxs7GvYOaMNs31QzQobbGxs7NvYefsmeacdJLebWzS5sLGxsQ9lz2JpFkV5i6r97moqgo2NjX00uy0nZlswe78ucrCxsbEvZudN/1lpkYxs8/YTNjY29s3sdtDbRtfsoM+rvOpSBBsbG/uXs9urPViZjxna8iYJLWxsbOwb2B8IhsWRmmQ83MYbNjY29p3sWWgl3521kDajglUvDRsbG/uXs2cPl5QW7bZumkrY2NjY2LPh6+bR94eEogIJGxsbGzsGbEqLDfJHAwwbGxv7K9n5ACAfDySw/dg4Wg0bGxv7aHa7XNKUb4/gzIqffNOxsbGxT2Xfc2FjY2NjY2NjY2N/zfUX4axoOitugUAAAAAASUVORK5CYII=">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/css/">css</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/svg/">svg</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=svg多线条动画实战&url=http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=svg多线条动画实战&url=http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html&via=Adambee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=svg多线条动画实战&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/08/23/180823-svg多线条动画实战/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>svg 多线条动画做起来挺容易的，但也有一些需要留意的地方，这里记录一下。</p>
+</blockquote>
+<a id="more"></a>
+<p>接下来将实现一个 loading 图标，先看看最终效果。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/shop-loading.svg" alt="shop-loading.svg"></p>
+<p>再来个慢动作的。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/shop-loading-slow.svg" alt="shop-loading-slow.svg"></p>
+<p>分析一下图标动画，发现很简单，先是三条线依次出现，紧接着三条线再依次消失，循环往复。</p>
+<h2 id="1-单个线条动画"><a href="#1-单个线条动画" class="headerlink" title="1. 单个线条动画"></a>1. 单个线条动画</h2><p>首先我们要拿到 svg 图标的代码，在此基础上进行动画的添加。直接用编辑器打开就会看到源码长这样。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"159px"</span> <span class="attr">height</span>=<span class="string">"189px"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 153 189"</span> <span class="attr">version</span>=<span class="string">"1.1"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> <span class="attr">xmlns:xlink</span>=<span class="string">"http://www.w3.org/1999/xlink"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">g</span> <span class="attr">stroke</span>=<span class="string">"none"</span> <span class="attr">stroke-width</span>=<span class="string">"1"</span> <span class="attr">fill</span>=<span class="string">"none"</span> <span class="attr">fill-rule</span>=<span class="string">"evenodd"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">g</span> <span class="attr">stroke</span>=<span class="string">"#b1b0bb"</span> <span class="attr">stroke-linecap</span>=<span class="string">"round"</span> <span class="attr">stroke-linejoin</span>=<span class="string">"round"</span> <span class="attr">stroke-width</span>=<span class="string">"6"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M13.5,30.5h126c6.6,0,12,5.4,12,12v132c0,6.6-5.4,12-12,12h-126c-6.6,0-12-5.4-12-12v-132</span></span></span><br><span class="line"><span class="tag"><span class="string">                    C1.5,35.8,6.9,30.5,13.5,30.5z"</span> <span class="attr">id</span>=<span class="string">"path1"</span>&gt;</span><span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M32,49 C32,24.147 52.147,4 77,4 C101.853,4 122,24.147 122,49"</span> <span class="attr">id</span>=<span class="string">"path2"</span>&gt;</span><span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">path</span> <span class="attr">d</span>=<span class="string">"M73.8913245,61.005342 C94.6107081,60.7220325 103.994386,71.7331929 108.124519,87.9406872 C108.971061,91.2595974 108.99596,94.7909896 109.609454,98.5179053 L109.609454,105.623585 C110.846403,108.707069 112.084347,111.792548 113.322291,114.87703 C116.210496,121.923853 118.661486,129.139266 120.41632,137.434047 C121.037782,140.376874 121.488939,145.789681 120.003008,148.010268 C118.37167,147.983334 117.7522,146.889999 116.950474,146.027102 C114.902837,143.820481 111.763657,140.156412 110.599411,137.268451 L110.516749,137.268451 C110.630285,144.637489 107.188342,150.112145 103.917699,154.289961 C102.652865,155.583807 101.38803,156.877654 100.123195,158.172498 C103.174733,158.653326 110.423131,161.589169 109.526792,165.278177 C106.446372,167.515723 97.9371232,166.931148 92.6168508,166.931148 C87.0197091,166.931148 81.6237459,166.421391 76.531542,166.104164 C74.7438429,166.269761 72.9571396,166.435357 71.1694405,166.600953 C67.210608,166.710686 63.2497837,166.820418 59.2909513,166.931148 C54.175841,166.932146 46.3478101,167.419957 43.3699714,165.278177 C42.547331,160.477878 49.7708308,159.859386 52.7735678,158.089699 L52.7735678,158.006901 C49.1433932,156.20629 44.6318181,148.07112 43.287309,143.630943 C43.0134275,142.281232 42.7375541,140.931522 42.4626767,139.58281 C42.4079004,138.810692 42.3531241,138.039571 42.2983478,137.268451 L42.2983478,137.434047 C41.5006057,138.645095 40.7028637,139.858139 39.9051216,141.069187 C38.6641895,142.838873 37.2758593,144.513791 35.8636267,146.1099 C35.2013315,146.859074 33.9992408,148.543967 32.6467642,147.761873 C31.3998564,143.991065 32.1896311,138.478502 33.0590803,134.872292 C35.2471444,125.800404 38.1542719,117.996427 41.4727196,110.167509 L43.287309,105.623585 C43.2604188,104.246941 43.2325327,102.869299 43.2046466,101.491657 C43.7583851,97.6969065 43.4536297,94.0478012 44.1955996,90.6680393 C46.8995568,78.3490667 52.2965161,68.309538 62.6731387,63.7316965 C64.8641906,62.7660503 67.2713599,62.0707451 69.8498296,61.5011335 C71.1963306,61.3365347 72.5438276,61.1709383 73.8913245,61.005342 Z"</span> <span class="attr">id</span>=<span class="string">"path3"</span>&gt;</span><span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">g</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们需要做的就是通过操作 <code>path</code> 元素来实现动画效果。svg 路径动画的原理其实就是通过改变线条的偏移量来欺骗视网膜从而实现动画效果，这里需要用到两个属性，简单提一下。</p>
+<blockquote>
+<ol>
+<li><code>stroke-dasharry: &lt;dasharray&gt;</code> 指定短划线和缺口的长度。</li>
+<li><code>stroke-dashoffset</code> 指定了 dash 模式到路径开始的距离，其实就是线条的偏移量。</li>
+</ol>
+</blockquote>
+<p>单个线条动画用 animation 可以简单实现，拿中间的小企鹅为例，两分钟实现动画。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#path3</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move3 <span class="number">2s</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> move3 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是实现后的效果，看起来还挺不错的。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/loading-single-line.svg" alt="loading single line"></p>
+<iframe height="265" scrolling="no" title="loading-single-line" src="//codepen.io/adambee/embed/xaGBpM/?height=265&theme-id=0&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/adambee/pen/xaGBpM/" target="_blank" rel="noopener">loading-single-line</a> by Adambee (<a href="https://codepen.io/adambee" target="_blank" rel="noopener">@adambee</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+
+<p>基本的思路就是指定短划线长度为整个线条的长度，先让线条完全偏移，在一段时间内改变偏移量，让线条逐渐出现。而我们可以通过下面这行代码来获取线条长度。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'path3'</span>).getTotalLength()</span><br></pre></td></tr></table></figure>
+<h2 id="2-多个线条依次出现动画"><a href="#2-多个线条依次出现动画" class="headerlink" title="2. 多个线条依次出现动画"></a>2. 多个线条依次出现动画</h2><p>最开始的的思路，给每个线条加动画，然后依次给线条延时，循环往复，从而实现依次出现的视觉效果。一点都难不倒我们。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#path1</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move1 <span class="number">2s</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#path2</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move2 <span class="number">1s</span> ease-in-out <span class="number">2s</span> infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#path3</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move3 <span class="number">2s</span> ease-in-out <span class="number">3s</span> infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> move1 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> move2 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> move3 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而，实现后的效果却长这样。忍不住念了两句诗，多情自古空余恨，好梦由来最易醒。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/loading-muli-line-in-order-1.svg" alt="loading mult line in order 1"></p>
+<iframe height="265" scrolling="no" title="loading muli line in order 1" src="//codepen.io/adambee/embed/ZMbJew/?height=265&theme-id=0&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/adambee/pen/ZMbJew/" target="_blank" rel="noopener">loading muli line in order 1</a> by Adambee (<a href="https://codepen.io/adambee" target="_blank" rel="noopener">@adambee</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+
+<p>赶紧分析原因，发现就是“循环往复”这儿出了问题，各个线条各干各的，只是在第一次播放的时候有延时，以后就会争先恐后地跑出来，没有相互关联起来，我们设置延时的初衷没有达到啊。</p>
+<p>现在我们是将动画分成了三个，才会出现上面的情况，知道了症结所在，就可以对症下药了。如果我们将他们合为一个，并将整个动画分割成三段，每段控制一个线条，岂不是就可以完美解决延时问题了？画张图来分析一下。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/loading-multi-lines.png" alt="loading multi line"></p>
+<p>于是我们就可以很轻松写出三段动画了，首先分析每段线条动画所占的时间比例，它只在比例限定的时间里活跃，其他时间处于静止状态，这样我们也不需要设置延时了，我们将三段动画的时间比例分别定为 40%，20%，40%，来看看代码长什么样。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#path1</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move1 <span class="number">5s</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#path2</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move2 <span class="number">5s</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#path3</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move3 <span class="number">5s</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> move1 &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  40%,</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> move2 &#123;</span><br><span class="line">  0%,</span><br><span class="line">  40% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  60%,</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">keyframes</span> move3 &#123;</span><br><span class="line">  0%,</span><br><span class="line">  60% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在，想要的效果出现了，这就是柳暗花明又一村最佳表现啊。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/loading-muli-line-in-order-2.svg" alt="loading mult line in order 2"></p>
+<iframe height="265" scrolling="no" title="loading muli line in order 2" src="//codepen.io/adambee/embed/RYWjPO/?height=265&theme-id=0&default-tab=html,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/adambee/pen/RYWjPO/" target="_blank" rel="noopener">loading muli line in order 2</a> by Adambee (<a href="https://codepen.io/adambee" target="_blank" rel="noopener">@adambee</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+
+<p>依次出现的动画到此告一段落。</p>
+<h2 id="3-多线条依次消失动画"><a href="#3-多线条依次消失动画" class="headerlink" title="3. 多线条依次消失动画"></a>3. 多线条依次消失动画</h2><p>有了上面的经验，消失动画就变得特别简单了，只需要将每个线条的消失动画也加进总动画即可。同样的，画个图来分析一下。</p>
+<p><img src="http://owkpb7b3w.bkt.clouddn.com/loading-all-steps.png" alt="loading all step"></p>
+<p>需要注意的是，50%~64% 和 86%~100% 两段时间内是没有动画的。看一下详细代码。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@all-time:</span> <span class="number">8s</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#path1</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move1 <span class="variable">@all-time</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#path2</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move2 <span class="variable">@all-time</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#path3</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: move3 <span class="variable">@all-time</span> ease-in-out infinite;</span><br><span class="line">  <span class="attribute">stroke-dasharray</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move1 &#123;</span><br><span class="line">  <span class="selector-tag">0%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">591.3617553710938px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">22%</span>,</span><br><span class="line">  <span class="selector-tag">64%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">72%</span>,</span><br><span class="line">  <span class="selector-tag">100%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: -<span class="number">591.3617553710938px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move2 &#123;</span><br><span class="line">  <span class="selector-tag">0%</span>,</span><br><span class="line">  <span class="selector-tag">22%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">141.3917236328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">32%</span>,</span><br><span class="line">  <span class="selector-tag">72%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">78%</span>,</span><br><span class="line">  <span class="selector-tag">100%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: -<span class="number">141.3917236328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> move3 &#123;</span><br><span class="line">  <span class="selector-tag">0%</span>,</span><br><span class="line">  <span class="selector-tag">32%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">384.932861328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">50%</span>,</span><br><span class="line">  <span class="selector-tag">78%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">86%</span>,</span><br><span class="line">  <span class="selector-tag">100%</span> &#123;</span><br><span class="line">    <span class="attribute">stroke-dashoffset</span>: -<span class="number">384.932861328125px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最终实现后的效果如开篇所示，并且发现只需要控制总时间就可以控制整个动画的速度，这才是我们想要的。完整的代码可看下面👇</p>
+<iframe height="265" scrolling="no" title="QVjQmW" src="//codepen.io/adambee/embed/QVjQmW/?height=265&theme-id=0&default-tab=css,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">See the Pen <a href="https://codepen.io/adambee/pen/QVjQmW/" target="_blank" rel="noopener">QVjQmW</a> by Adambee (<a href="https://codepen.io/adambee" target="_blank" rel="noopener">@adambee</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.<br></iframe>
+
+<p>总结一句，个人觉得 svg 线条动画关键点就是多个线条的整体控制，只要解决了这个问题，整个流程就比较简单了。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/10/180910-git-cheat-sheet/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/20/180820-七个css技巧/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Adambee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        adambee08@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">20</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Adambee" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hexo
+            
+                <br>
+                
+                    <a href="#">一片月明如水</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

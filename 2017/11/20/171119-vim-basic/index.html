@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            用Vim优雅的编辑 | 
+        
+        Hexo
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="
+Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporved。使用vim可以实现全键盘操作，摆脱鼠标操作痛苦。
+">
+    <meta name="keywords" content="博客,vim">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg2.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hexo">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2017/11/20/171119-vim-basic/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com/2017/11/20/171119-vim-basic/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="用Vim优雅的编辑 | Hexo">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="
+Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporved。使用vim可以实现全键盘操作，摆脱鼠标操作痛苦。
+">
+    <meta property="og:article:tag" content="vim"> 
+
+    
+        <meta property="article:published_time" content="Mon Nov 20 2017 00:17:19 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 11 2018 17:16:16 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/2017/11/20/171119-vim-basic/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/20/171119-vim-basic/index.html",
+    "headline": "用Vim优雅的编辑",
+    "datePublished": "Mon Nov 20 2017 00:17:19 GMT+0800",
+    "dateModified": "Tue Sep 11 2018 17:16:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Adambee",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "宇宙塌缩之日，将撑月亮救世"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hexo",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",vim博客",
+    "description": "
+Vim是从vi发展起来的一个超简洁的文本编辑器，全称为Vi IMporved。使用vim可以实现全键盘操作，摆脱鼠标操作痛苦。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vim简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vim简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插入模式"><span class="post-toc-number">2.</span> <span class="post-toc-text">插入模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#普通模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">普通模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-移动和跳转"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 移动和跳转</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-搜索和标记"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 搜索和标记</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-即时执行操作"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. 即时执行操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可视模式"><span class="post-toc-number">4.</span> <span class="post-toc-text">可视模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令模式"><span class="post-toc-number">5.</span> <span class="post-toc-text">命令模式</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                用Vim优雅的编辑
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Adambee</strong>
+        <span>Nov 20, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">Read this article on other devices</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aQW7DMAwEwPz/0+21QBNnSUqCE4xPReM6Gh9EdsXHz1dfDzw8PDw8PDw8vJvxHvH15EF/fn99//8787+qrg0PDw/vDO/NVhvwqshoi2+tDQ8PD+8k79XiXt3zCna9lOunVUsIHh4e3qfwks36uv3NXxkeHh7e9/EmDXf+ZDw8PLx78pJ/+JN4N2+X85j4UNaCh4eHF/PyQ6bzPx8938PDw8MLeOWRpmIDnRSYySHZk5Xg4eHhbeblG3EvqJ0XmHwIDA8PD+8krwqbxxl55JEHwXh4eHjnedWwddWn1Qa9WRjw8PDwFvHyTfn6iGtHLNts9/Hw8PA286pf04tce8NVeQHDw8PDO8+bLH1HsJusrVAY8PDw8Jby5sdO1Ra8GoXkMDw8PLwzvGQTT0jVIarJwdtodAAPDw9v0QnRJJatNty98KIwyoCHh4d3hJds9L1xq/wF5Q13M4zAw8PDW8rLW97ep3lRmRckPDw8vPO86vhpr/3thRHNlBoPDw9vKW/+0Grw+mZbj8vMKKXGw8PDW8RLllUdrqoWnsmLw8PDwzvJqzbH1/f3isGkrcfDw8O7A6+6lHmoUQ2RR4UBDw8PbylvfvQ1iTMmY6x4eHh4Z3jVazKM1YuDy8dseHh4eJt5ve14Etfmy10wdIWHh4e3jZcHENVmeu2rbBYGPDw8vG28fIOuLjR/EfMBBTw8PLw786oRQzUgbn4jHh4e3o151TsnDXcScODh4eGd5+WDVvlW/mYpxXKyPcbFw8PD23AAlgSvq+6vBsd4eHh4Z3jfd+Hh4eHh4eHh4d3g+gUDhpBs1QRHHQAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/vim/">vim</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;Views
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=用Vim优雅的编辑&url=http://yoursite.com/2017/11/20/171119-vim-basic/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=用Vim优雅的编辑&url=http://yoursite.com/2017/11/20/171119-vim-basic/index.html&via=Adambee" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/11/20/171119-vim-basic/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/11/20/171119-vim-basic/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hexo&title=用Vim优雅的编辑&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/11/20/171119-vim-basic/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <blockquote>
+<p>Vim是从vi发展起来的一个超简洁的文本编辑器，全称为<code>Vi IMporved</code>。使用vim可以实现全键盘操作，摆脱鼠标操作痛苦。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Vim简介"><a href="#Vim简介" class="headerlink" title="Vim简介"></a>Vim简介</h2><p>Vim的设计理念是<strong>命令的组合</strong>。在Vim中可以使用各种各样的组合命令来完成我们的编辑。<strong>模式</strong>是一个编辑器所必备的，几乎所有的编辑器都会有插入和执行两种模式，可以用键盘和鼠标完成模式的切换和命令的执行。Vim具有挺多种模式，常用的有普通模式、插入模式、可视模式和命令行模式。</p>
+<p>其中Vim强大的编辑能力有很大一部分来源于它的普通模式，而普通模式的强大就在于命令的组合。在本文的后半部分我们将看到普通模式下的一些常用命令。</p>
+<p>在正式开始盛宴之前，我们先来几条小小的约定。</p>
+<p><strong>1. 停顿时请移开画笔。</strong><br>不同于其他编辑器将插入模式作为默认状态，<strong>普通模式</strong>才是Vim的默认状态。所以，只在编写代码的那几分钟内进入插入模式，其他时候请保持普通模式。</p>
+<p><strong>2. 告别<code>esc</code>，远离方向键。</strong><br>Vim可以有两种方式实现普通模式和插入模式之间的切换，<code>esc</code>和<code>&lt;C-[&gt;</code>（就是<code>Control+[</code>），可两种方式都很难操作，<code>esc</code>太远，<code>Control</code>偏下，为此我们可以尝试调换<code>Capslock</code>和<code>Control</code>的位置，并将<code>&lt;C-[&gt;</code>作为默认切换方式。</p>
+<p><strong>方向键</strong>由于距离太远将会极大的减缓我们的操作效率，Vim中我们将用<code>hjkl</code>分表代表上下左右。</p>
+<p><strong>3. 强大的重复操作符<code>.</code></strong><br>之所以将它放在约定中，是因为使用重复操作会呈几何倍数的提高我们的效率。<code>.</code>命令可以重复修改上次的操作，它是Vim中最强大的多面手。</p>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a>插入模式</h2><p>前面提到大部分命令在普通模式下执行，不过有些功能在插入模式下可以更好的执行。</p>
+<ul>
+<li><code>&lt;C-a&gt;</code>  跳转到当前行首</li>
+<li><code>&lt;C-b&gt;</code>  向前移动一个单词</li>
+<li><code>&lt;C-d&gt;</code>  减少缩进</li>
+<li><code>&lt;C-h&gt;</code>  删除前一个字符（同<code>Backspace</code>）</li>
+<li><code>&lt;C-k&gt;</code>  删除当前行光标后面的内容</li>
+<li><code>&lt;C-w&gt;</code>  删除前一个单词</li>
+<li><code>&lt;C-u&gt;</code>  删除至行首</li>
+<li><code>&lt;C-t&gt;</code>  增加缩进</li>
+</ul>
+<p>这里只列出几个较常用的，更多可以查看<code>:help insert-index</code>，里面有很详细的命令解释，另外这些命令并不是Vim独有的，在shell中一样可以用。</p>
+<h2 id="普通模式"><a href="#普通模式" class="headerlink" title="普通模式"></a>普通模式</h2><p>普通模式下我们可以执行大多数操作，并可以将操作符和动作命令结合起来实现强大的功能。还记得怎么进入普通模式吗？对了，就是<code>&lt;C-[&gt;</code>。</p>
+<h3 id="1-移动和跳转"><a href="#1-移动和跳转" class="headerlink" title="1. 移动和跳转"></a>1. 移动和跳转</h3><p><strong>单行跳转</strong></p>
+<ul>
+<li><code>h</code>  左移一个字符</li>
+<li><code>j</code>  下移一个字符</li>
+<li><code>k</code>  上移一个字符</li>
+<li><code>l</code>  右移一个字符</li>
+<li><code>10h</code>  向下移动10行</li>
+</ul>
+<p><strong>单词跳转</strong></p>
+<ul>
+<li><code>w</code>  跳到下一个单词的词首</li>
+<li><code>e</code>  跳到下一个单词的词尾</li>
+<li><code>b</code>  跳到上一个单词的词首</li>
+<li><code>nw</code>  跳转到后面第n个单词</li>
+</ul>
+<p><strong>行内跳转</strong></p>
+<ul>
+<li><code>^</code>  跳到当前行的开头（忽视行首空格）</li>
+<li><code>0</code>或<code>|</code>  跳到当前行的开头（包括行首空格）</li>
+<li><code>$</code>或  跳到当前行的行尾</li>
+<li><code>g _</code>  跳到当前行的行尾（不包括空格）</li>
+<li><code>f x</code>  跳到本行的下一个x处</li>
+<li><code>F x</code>  跳到本行的上一个x处</li>
+<li><code>;</code>  重复上一次跳转</li>
+<li><code>n|</code>  跳到当前行的第n列</li>
+</ul>
+<p><strong>文档内跳转</strong></p>
+<ul>
+<li><code>gg</code>  跳到文档第一行</li>
+<li><code>G</code>  跳到文档最后一行</li>
+<li><code>ngg</code>或<code>nG</code>  跳到文档的第n行</li>
+<li><code>+</code>  跳到下一行行首</li>
+<li><code>-</code>  跳到上一行行首</li>
+</ul>
+<p><strong>当前屏幕跳转</strong></p>
+<ul>
+<li><code>H</code>  移动到当前屏幕的顶端</li>
+<li><code>M</code>  移动到当前屏幕的中间</li>
+<li><code>L</code>  移动到当前屏幕的底端</li>
+</ul>
+<p><strong>移动当前行</strong></p>
+<ul>
+<li><code>zz</code>  移动当前行到中间</li>
+<li><code>zt</code>  移动当前行到屏幕顶端</li>
+<li><code>zb</code>  移动当前行到屏幕底端</li>
+</ul>
+<h3 id="2-搜索和标记"><a href="#2-搜索和标记" class="headerlink" title="2. 搜索和标记"></a>2. 搜索和标记</h3><p><strong>文档内检索</strong></p>
+<ul>
+<li><code>/</code>+<code>xxx</code>  查找xxx</li>
+<li><code>*</code>  查找下一个光标所在的单词</li>
+<li><code>#</code>  查找上一个光标所在的单词</li>
+<li><code>n</code>  跳到下一个查找的单词</li>
+<li><code>N</code>  跳到上一个查找的单词</li>
+<li><code>:noh</code>  取消本次高亮</li>
+</ul>
+<p><strong>文档内标记</strong></p>
+<ul>
+<li><code>m x</code>  标记当前位置为x</li>
+<li><code>&#39; x</code>  跳到标记为x的位置</li>
+<li><code>&#39; &#39;</code>  跳到跳转之前的位置</li>
+</ul>
+<h3 id="3-即时执行操作"><a href="#3-即时执行操作" class="headerlink" title="3. 即时执行操作"></a>3. 即时执行操作</h3><p><strong>切换到插入模式</strong></p>
+<ul>
+<li><code>i</code>  插入到光标前</li>
+<li><code>a</code>  插入到光标后</li>
+<li><code>I</code>  插入到当前行的开始</li>
+<li><code>A</code>  插入到当前行的末尾</li>
+<li><code>o</code>  向下插入一行</li>
+<li><code>O</code>  向上插入一行</li>
+</ul>
+<p><strong>普通模式下编辑</strong></p>
+<ul>
+<li><code>r</code>  修改当前字符（改完后自动切换）</li>
+<li><code>R</code>  修改自光标起及之后的字符（需手动切换到普通模式）</li>
+<li><code>x</code>  删除当前字符</li>
+<li><code>X</code>  删除光标前的字符</li>
+<li><code>s</code>  删除当前字符并进入插入模式</li>
+<li><code>S</code>  删除当前行并进入插入模式</li>
+<li><code>c</code>  修改（一般用于合成命令）</li>
+<li><code>d</code>  剪切（一般用于合成命令）</li>
+<li><code>y</code>  复制（一般用于合成命令）</li>
+<li><code>dd</code>  删除当前行</li>
+<li><code>yy</code> 复制当前行</li>
+<li><code>p</code>  粘贴到当前行的下方</li>
+<li><code>P</code>  粘贴到当前行的上方</li>
+<li><code>~</code>  大小写反转</li>
+</ul>
+<p><strong>撤销和恢复撤销</strong></p>
+<ul>
+<li><code>u</code>  撤销上一步操作</li>
+<li><code>&lt;C-r&gt;</code>  恢复上一步操作</li>
+</ul>
+<p><strong>缩进</strong></p>
+<ul>
+<li><code>&gt;</code>  增加缩进</li>
+<li><code>&lt;</code>  减少缩进</li>
+<li><code>=</code>  自动缩进</li>
+</ul>
+<h2 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h2><p>Vim的可视模式类似于其他编辑器按住鼠标拖动选择区域，却又有些许不同，在可视模式下可以使用普通模式的命令来操作。</p>
+<p><strong>激活可视模式</strong></p>
+<ul>
+<li><code>v</code>  激活面向字符的可视模式</li>
+<li><code>V</code>  激活面向行的可视模式</li>
+<li><code>&lt;C-v&gt;</code>  激活面向列的可视模式</li>
+<li><code>gv</code>  重选上次的高亮区域</li>
+</ul>
+<p><strong>切换可视模式</strong></p>
+<ul>
+<li><code>o</code>  在可视模式下可以切换选取的活动端</li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p>在命令模式下我们可以为Vim开辟一块新天地。命令模式下，可以使用复杂的命令。在编辑模式下键入<code>:</code>，光标就跳到屏幕最后一行，并在那里显示冒号，此时已进入命令模式。这篇文章不过多介绍命令模式。</p>
+<p><strong>打开、保存和退出</strong></p>
+<ul>
+<li><code>:e test.txt</code>  在打开的vim中打开test.txt文件</li>
+<li><code>:w</code>  保存当前文件</li>
+<li><code>:q</code>  退出当前文件</li>
+<li><code>:w test2.txt</code> 另存文件为test2.txt（原文件依然存在）</li>
+<li><code>:qall</code>  退出多个文件</li>
+<li><code>:q!</code>  强制退出当前文件（所做的修改将不会保存）</li>
+<li><code>:wq</code>  保存并退出当前文件</li>
+</ul>
+<p><strong>分屏</strong></p>
+<ul>
+<li><code>:sp(lit)</code>  上下分屏</li>
+<li><code>:vsp(lit)</code>  左右分屏</li>
+<li><code>&lt;C-w&gt;</code>+<code>hjkl</code>  在不同屏之间切换</li>
+</ul>
+<p><strong>标签页</strong></p>
+<ul>
+<li><code>:tabnew</code>  新建标签页</li>
+<li><code>:tabnew filename</code>  在新标签页中打开文件</li>
+<li><code>:tabn(ext)</code>  跳到下一个标签页</li>
+<li><code>:tabN(ext)</code>  跳到上一个标签页</li>
+<li><code>:tabfir(st)</code>  跳到第一个标签页</li>
+<li><code>:tabl(ast)</code>  跳到最后一个标签页</li>
+<li><code>:tabo(nly)</code>  关闭除当前标签页以外的其他标签页</li>
+</ul>
+<p>芳草有情皆碍马，好云无处不遮楼。编辑器加IDE成百上千，没有孰好孰坏，只要是对的便是最好的。学问，重在内功修炼。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/11/23/171123-emmet/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/30/171029-fast-search-in-the-internet/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="Adambee's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        adambee08@email.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">June 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">March 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">December 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">November 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">October 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">September 2017<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">20</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Adambee" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hexo
+            
+                <br>
+                
+                    <a href="#">一片月明如水</a>
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
