@@ -45,7 +45,7 @@
     
     <title>
         
-            JavaScript严格模式下有哪些不同 | 
+            emacs备忘单 | 
         
         Adambee
     </title>
@@ -56,9 +56,9 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="
-ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条件下进行，其中的一些不确定的行为得到处理。
+最近上手玩一玩 emacs，参考一些资料整理了一下 emacs 基础命令。
 ">
-    <meta name="keywords" content="博客,JavaScript">
+    <meta name="keywords" content="博客,emacs">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -203,7 +203,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Adambee">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/02/10/180210-use-setict-mode/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/09/16/180916-emacs备忘单/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Adambee">
@@ -218,18 +218,18 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/02/10/180210-use-setict-mode/">
+    <meta property="og:url" content="http://yoursite.com/2018/09/16/180916-emacs备忘单/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="JavaScript严格模式下有哪些不同 | Adambee">
+    <meta property="og:title" content="emacs备忘单 | Adambee">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="
-ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条件下进行，其中的一些不确定的行为得到处理。
+最近上手玩一玩 emacs，参考一些资料整理了一下 emacs 基础命令。
 ">
-    <meta property="og:article:tag" content="JavaScript"> 
+    <meta property="og:article:tag" content="emacs"> 
 
     
-        <meta property="article:published_time" content="Sat Feb 10 2018 13:31:48 GMT+0800">
-        <meta property="article:modified_time" content="Thu Sep 13 2018 14:03:43 GMT+0800">
+        <meta property="article:published_time" content="Sun Sep 16 2018 22:56:46 GMT+0800">
+        <meta property="article:modified_time" content="Sun Sep 16 2018 23:10:33 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -237,7 +237,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -249,10 +249,10 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html",
-    "headline": "JavaScript严格模式下有哪些不同",
-    "datePublished": "Sat Feb 10 2018 13:31:48 GMT+0800",
-    "dateModified": "Thu Sep 13 2018 14:03:43 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html",
+    "headline": "emacs备忘单",
+    "datePublished": "Sun Sep 16 2018 22:56:46 GMT+0800",
+    "dateModified": "Sun Sep 16 2018 23:10:33 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Adambee",
@@ -270,9 +270,9 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",JavaScript博客",
+    "keywords": ",emacs博客",
     "description": "
-ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条件下进行，其中的一些不确定的行为得到处理。
+最近上手玩一玩 emacs，参考一些资料整理了一下 emacs 基础命令。
 ",
 }
 </script>
@@ -338,7 +338,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式"><span class="post-toc-text">严格模式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#严格模式的限制"><span class="post-toc-text">严格模式的限制</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-小结（SUMMARY）"><span class="post-toc-text">1. 小结（SUMMARY）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-基本的光标控制（BASIC-CURSOR-CONTROL）"><span class="post-toc-text">2. 基本的光标控制（BASIC CURSOR CONTROL）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-如果-EMACS-失去响应（IF-EMACS-STOPS-RESPONDING）"><span class="post-toc-text">3. 如果 EMACS 失去响应（IF EMACS STOPS RESPONDING）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-被禁用的命令（DISABLED-COMMANDS）"><span class="post-toc-text">4. 被禁用的命令（DISABLED COMMANDS）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-窗格（WINDOWS）"><span class="post-toc-text">5. 窗格（WINDOWS）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-插入与删除（INSERTING-AND-DELETING）"><span class="post-toc-text">6. 插入与删除（INSERTING AND DELETING）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-撤销（UNDO）"><span class="post-toc-text">7. 撤销（UNDO）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-文件（FILE）"><span class="post-toc-text">8. 文件（FILE）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-缓冲区（BUFFER）"><span class="post-toc-text">9. 缓冲区（BUFFER）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-命令集扩展（EXTENDING-THE-COMMAND-SET）"><span class="post-toc-text">10. 命令集扩展（EXTENDING THE COMMAND SET）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-搜索（SEARCHING）"><span class="post-toc-text">11. 搜索（SEARCHING）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#12-多窗格（MULTIPLE-WINDOWS）"><span class="post-toc-text">12. 多窗格（MULTIPLE WINDOWS）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-多窗口（MULTIPLE-FRAMES）"><span class="post-toc-text">13. 多窗口（MULTIPLE FRAMES）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#14-获得更多帮助（GETTING-MORE-HELP）"><span class="post-toc-text">14. 获得更多帮助（GETTING MORE HELP）</span></a></li></ol>
     </ul>
     
 
@@ -358,10 +358,10 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://streetwill.co/uploads/post/photo/637/show_MlO0i_nrZNY9Nx0elrQax9IRQIBED6xkhlEm_Gm6sqU.jpg)">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://cdn.pixabay.com/photo/2018/08/29/19/01/fig-3640553_1280.jpg)">
     
             <p class="article-headline-p">
-                JavaScript严格模式下有哪些不同
+                emacs备忘单
             </p>
         </div>
 
@@ -380,7 +380,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     <!-- Author Name & Date -->
     <div>
         <strong>Adambee</strong>
-        <span>Feb 10, 2018</span>
+        <span>Sep 16, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -404,7 +404,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+        <a class="post_tag-link" href="/tags/emacs/">emacs</a>
     </ul>
     
 
@@ -432,7 +432,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript严格模式下有哪些不同&url=http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=emacs备忘单&url=http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -441,7 +441,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript严格模式下有哪些不同&url=http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html&via=Adambee" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=emacs备忘单&url=http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html&via=Adambee" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -450,7 +450,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -459,7 +459,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -471,7 +471,7 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Adambee&title=JavaScript严格模式下有哪些不同&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/02/10/180210-use-setict-mode/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Adambee&title=emacs备忘单&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/09/16/180916-emacs备忘单/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to QQ
             </li>
@@ -491,78 +491,115 @@ ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条�
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <blockquote>
-<p>ECMAScript 5引入了严格模式(strict mode)，严格模式即在严格的条件下进行，其中的一些不确定的行为得到处理。</p>
+<p>最近上手玩一玩 emacs，参考一些资料整理了一下 emacs 基础命令。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>通过在脚本或函数的头部添加<code>&quot;use strict&quot;;</code>表达式来声明。<br>支持严格模式的浏览器有ie 10+,Firefox 4+,chrome 13+,safari 5.1+,opera 12+。</p>
-<p>使用严格模式的好处:</p>
-<ul>
-<li>消除语法的不合理，不严谨之处，保证代码的运行安全</li>
-<li>提高编译器效率，增加运行速度</li>
-<li>为未来新版本的js做铺垫</li>
-</ul>
-<h2 id="严格模式的限制"><a href="#严格模式的限制" class="headerlink" title="严格模式的限制"></a>严格模式的限制</h2><ol>
-<li><p>不允许使用未声明的变量<br>对象也是一个变量。</p>
-<pre><code class="javascript">&quot;use strict&quot;
-x = {s1:100, s2:99}; //Uncaught ReferenceError: x is not defined
+<p>要退出 Emacs，请用 C-x C-c（两个连续的组合键）。<br>要退出一个正在运行中的命令，请用 C-g。</p>
+<h2 id="1-小结（SUMMARY）"><a href="#1-小结（SUMMARY）" class="headerlink" title="1. 小结（SUMMARY）"></a>1. 小结（SUMMARY）</h2><pre><code class="shell">C-v     向前移动一屏
+M-v     向后移动一屏
+C-l     重绘屏幕，并将光标所在行置于屏幕的中央
 </code></pre>
-</li>
-<li><p>不允许对变量或函数使用delete操作符</p>
-<pre><code class="javascript">&quot;use strict&quot;
-var x = 1;
-delete x; //Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.
+<h2 id="2-基本的光标控制（BASIC-CURSOR-CONTROL）"><a href="#2-基本的光标控制（BASIC-CURSOR-CONTROL）" class="headerlink" title="2. 基本的光标控制（BASIC CURSOR CONTROL）"></a>2. 基本的光标控制（BASIC CURSOR CONTROL）</h2><p>这里对简单的光标移动命令做一个总结，其中也包括了整词和整句的移动：</p>
+<pre><code class="shell">C-f     向右移动一个字符
+C-b     向左移动一个字符
+
+M-f     向右移动一个词【对中文是移动到下一个标点符号】
+M-b     向左移动一个词【对中文是移动到上一个标点符号】
+
+C-n     移动到下一行
+C-p     移动到上一行
+
+C-a     移动到行首
+C-e     移动到行尾
+
+M-a     移动到句首
+M-e     移动到句尾
+
+M-&lt; （META 小于号）可以将光标移动到所有文字的最开头；
+M-&gt; （META 大于号）可以将光标移动到所有文字的最末尾。
 </code></pre>
-</li>
-<li><p>不允许变量重名</p>
-<pre><code class="javascript">&quot;use strict&quot;
-function fs(r1,r1) {
-} //Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+<p>大部分的 Emacs 命令接受数字参数，并且对于多数命令而言，这些数字参数的作<br>用是指定命令的重复次数。为一个命令指定数字参数（也就是重复次数）的方法<br>是：先输入 C-u，然后输入数字作为参数，最后再输入命令。</p>
+<pre><code class="shell">C-u 8 C-f     向前移动 8 个字符。
+C-u 8 C-v     将文字向上滚动 8 行
 </code></pre>
-</li>
-<li><p>不允许使用八进制</p>
-<pre><code class="javascript">&quot;use strict&quot;
-var x = 012; //Uncaught SyntaxError: Octal literals are not allowed in strict mode.
+<h2 id="3-如果-EMACS-失去响应（IF-EMACS-STOPS-RESPONDING）"><a href="#3-如果-EMACS-失去响应（IF-EMACS-STOPS-RESPONDING）" class="headerlink" title="3. 如果 EMACS 失去响应（IF EMACS STOPS RESPONDING）"></a>3. 如果 EMACS 失去响应（IF EMACS STOPS RESPONDING）</h2><p>如果 Emacs 对你的命令失去响应，可以用</p>
+<pre><code class="shell">C-g 安全地终止失去响应的命令。
+C-g 终止一条执行过久的命令。
+C-g 还可以取消数字参数和只输入到一半的命令。
 </code></pre>
-</li>
-<li><p>抛弃with语句</p>
-<pre><code class="javascript">&quot;use strict&quot;
-var str = &quot;hello&quot;;
-with(str) {
-console.log(toUpperCase());
-}
-//Uncaught SyntaxError: Strict mode code may not include a with statement
+<h2 id="4-被禁用的命令（DISABLED-COMMANDS）"><a href="#4-被禁用的命令（DISABLED-COMMANDS）" class="headerlink" title="4. 被禁用的命令（DISABLED COMMANDS）"></a>4. 被禁用的命令（DISABLED COMMANDS）</h2><p>有一些 Emacs 命令被“禁用”了，以避免初学者在不了解其确切功能的情况下误<br>用而造成麻烦。如果你用到了一个被禁用的命令，Emacs 会显示一个提示消息，告诉你这个命令到底是干什么的，询问你是否要继续，并在得到你的肯定之后再执行这命令。</p>
+<h2 id="5-窗格（WINDOWS）"><a href="#5-窗格（WINDOWS）" class="headerlink" title="5. 窗格（WINDOWS）"></a>5. 窗格（WINDOWS）</h2><p>Emacs 可以有多个“窗格”，每个窗格显示不同的文字。后面会介绍怎么对付多个窗格，现在我们先学会如何关掉多余的窗格。其实也很简单：</p>
+<pre><code class="shell">C-x 1   只保留一个窗格（也就是关掉其它所有窗格）
 </code></pre>
-</li>
-<li><p>不可对只读对象赋值，不可对不可配置对象使用delete操作符</p>
-<pre><code class="javascript">&quot;use strict&quot;
-console.log(Object.prototype);
-delete Object.prototype; //Uncaught TypeError
-console.log(Object.prototype); 
+<h2 id="6-插入与删除（INSERTING-AND-DELETING）"><a href="#6-插入与删除（INSERTING-AND-DELETING）" class="headerlink" title="6. 插入与删除（INSERTING AND DELETING）"></a>6. 插入与删除（INSERTING AND DELETING）</h2><p>插入文本的操作小结：</p>
+<pre><code class="shell">C-u 8 *    这将会插入 ********
 </code></pre>
-</li>
-<li><p>禁止this关键字指向全局对象</p>
-<pre><code class="javascript">&quot;use strict&quot;
-function fs() {
-console.log(this);
-}
-fs();
-//undefined
+<p>下面是一个关于“删除”操作的小结：</p>
+<pre><code class="shell">&lt;DEL&gt;        删除光标前的一个字符
+C-d          删除光标后的一个字符
+
+M-&lt;DEL&gt;      移除光标前的一个词
+M-d          移除光标后的一个词
+
+C-k          移除从光标到“行尾”间的字符
+M-k          移除从光标到“句尾”间的字符
+
+C-&lt;SPC&gt;      选中模式
+C-w          移除选中区域字符
 </code></pre>
-</li>
-<li><p>不可在if内部声明函数</p>
-<pre><code class="javascript">&quot;use strict&quot;
-var a=0;
-if(a&lt;=2) {
-function add() {
- a++;
- return a;
-}
-}
-add(); //Uncaught ReferenceError: add is not defined
-console.log(add()); //非严格模式下返回2
+<p>重新插入被移除的文字恢复的动作称为“召回（yanking）”。</p>
+<pre><code class="shell">C-y          在光标所在处插入最后移除的文字
+M-y          召回前几次移除的东西
 </code></pre>
-</li>
-</ol>
+<p>如果连续按 M-y 很多次，你可能会回到起始点，也就是最近移除的文字。【看得出这实际上是一个环。】</p>
+<h2 id="7-撤销（UNDO）"><a href="#7-撤销（UNDO）" class="headerlink" title="7. 撤销（UNDO）"></a>7. 撤销（UNDO）</h2><pre><code class="shell">C-/         撤销操作
+C-_         也是撤销命令
+C-x u       也是撤销命令
+</code></pre>
+<h2 id="8-文件（FILE）"><a href="#8-文件（FILE）" class="headerlink" title="8. 文件（FILE）"></a>8. 文件（FILE）</h2><pre><code class="shell">C-x C-f   寻找文件或创建新文件
+C-x C-s   储存文件
+M-x customize-variable &lt;Return&gt; make-backup-files &lt;Return&gt; 关闭文件备份
+</code></pre>
+<h2 id="9-缓冲区（BUFFER）"><a href="#9-缓冲区（BUFFER）" class="headerlink" title="9. 缓冲区（BUFFER）"></a>9. 缓冲区（BUFFER）</h2><p>Emacs 把每个编辑中的文件都放在一个称为“缓冲区（buffer）”的地方。每寻找到一个文件，Emacs 就在其内部开辟一个缓冲区。</p>
+<pre><code class="shell">C-x C-b   列出缓冲区
+C-x 1     离开缓冲区列表
+C-x b &lt;filename&gt;    切换缓存区
+C-x s   保存多个缓冲区
+</code></pre>
+<h2 id="10-命令集扩展（EXTENDING-THE-COMMAND-SET）"><a href="#10-命令集扩展（EXTENDING-THE-COMMAND-SET）" class="headerlink" title="10. 命令集扩展（EXTENDING THE COMMAND SET）"></a>10. 命令集扩展（EXTENDING THE COMMAND SET）</h2><p>扩展命令有两种风格：</p>
+<pre><code class="shell">C-x     字符扩展。C-x 之后输入另一个字符或者组合键。
+M-x     命令名扩展。M-x 之后输入一个命令名。
+</code></pre>
+<p>C-x 的扩展命令有很多，下面列出的是你已经学过的：</p>
+<pre><code class="shell">C-x C-f         寻找文件。
+C-x C-s         保存文件。
+C-x C-b         列出缓冲区。
+C-x C-c         离开 Emacs。
+C-x 1           关掉其它所有窗格，只保留一个。
+C-x u           撤销。
+</code></pre>
+<h2 id="11-搜索（SEARCHING）"><a href="#11-搜索（SEARCHING）" class="headerlink" title="11. 搜索（SEARCHING）"></a>11. 搜索（SEARCHING）</h2><pre><code class="shell">C-s   向前搜索
+C-r   向后搜索
+</code></pre>
+<h2 id="12-多窗格（MULTIPLE-WINDOWS）"><a href="#12-多窗格（MULTIPLE-WINDOWS）" class="headerlink" title="12. 多窗格（MULTIPLE WINDOWS）"></a>12. 多窗格（MULTIPLE WINDOWS）</h2><pre><code class="shell">C-x 2    将屏幕划分成两个窗格
+C-x o    将光标转移到别的窗格
+
+C-M-v    滚动下方的窗格
+C-M-S-v  向上滚动下方窗格
+</code></pre>
+<h2 id="13-多窗口（MULTIPLE-FRAMES）"><a href="#13-多窗口（MULTIPLE-FRAMES）" class="headerlink" title="13. 多窗口（MULTIPLE FRAMES）"></a>13. 多窗口（MULTIPLE FRAMES）</h2><pre><code class="shell">M-x make-frame &lt;Return&gt;  创建新窗口
+M-x delete-frame &lt;Return&gt;  关闭选中窗口
+</code></pre>
+<h2 id="14-获得更多帮助（GETTING-MORE-HELP）"><a href="#14-获得更多帮助（GETTING-MORE-HELP）" class="headerlink" title="14. 获得更多帮助（GETTING MORE HELP）"></a>14. 获得更多帮助（GETTING MORE HELP）</h2><pre><code class="shell">C-h ?   告诉能提供哪些帮助
+
+C-h c &lt;command&gt;  给出命令的简要说明
+C-h k &lt;command&gt;  给出命令的详细说明
+C-h f &lt;function&gt;   解释一个函数
+C-h v   显示 Emacs 变量的文档
+C-h a   相关命令搜索（Command Apropos）。
+
+C-h i    阅读手册（也就是通常讲的 Info）。
+</code></pre>
 
         
     
@@ -583,21 +620,13 @@ console.log(add()); //非严格模式下返回2
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/03/09/180211-scope-and-promote/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Newer
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/02/09/180209-create-simple-ajax-require/" id="post_nav-older" class="next-content">
+        <a href="/2018/09/12/hello-world/" id="post_nav-older" class="next-content">
             Older
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
