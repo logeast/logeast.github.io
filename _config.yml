@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 title: Jekyll Serial Programmer
 markdown: kramdown
 url: ""
@@ -26,3 +27,6 @@ defaults:
       layout: "post"
       permalink: /posts/:title/
 exclude: ["sitemap.xml", "feed.xml", "LICENSE", "README.md"]
+=======
+theme: jekyll-theme-hacker
+>>>>>>> 11ad4026b56ded5a28c140abace52625bf998baf
