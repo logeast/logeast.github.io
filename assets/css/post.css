@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
 
-:root {
-  --gray-1: #3f3f3f;
-  --gray-2: #32353a;
-  --gray-3: #25282c;
-  --gray-4: #151618;
-  --gray-5: #151618;
-  --gray-6: #111111;
-  --white-1: #eeeeee;
-  --white-2: #a9abb3;
-}
 * {
   font-family: inherit;
   text-decoration: none;
@@ -81,6 +71,28 @@ main {
   padding: 0 0.8rem;
   line-height: 1.3rem;
   cursor: pointer;
+}
+
+.category.Thinking {
+  color: var(--red-4);
+  background-color: var(--red-2);
+}
+.category.Reading {
+  color: var(--orange-4);
+  background-color: var(--orange-2);
+}
+.category.Vitamin {
+  color: var(--green-4);
+  background-color: var(--green-2);
+}
+
+.category.Weekly {
+  color: var(--blue-4);
+  background-color: var(--blue-2);
+}
+.category.Book {
+  color: var(--purple-4);
+  background-color: var(--purple-2);
 }
 
 /* markdown content */

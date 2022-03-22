@@ -4,11 +4,14 @@
 
 ## Tags
 
+- Thinking
 - Reading
-- Vitamin
 - Book
-- Template
+- Computer
+- Project
 - Weekly
+- Vitamin
+- Template
 
 ## Theme
 
