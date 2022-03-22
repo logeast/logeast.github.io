@@ -66,32 +66,39 @@ main {
   display: block;
   color: var(--gray-4);
   background: var(--white-2);
-  border-radius: 15px;
+  border: 1px solid var(--gray-4);
+  border-radius: 4px;
   font-size: 0.7rem;
-  padding: 0 0.8rem;
+  padding: 0 0.4rem;
   line-height: 1.3rem;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .category.Thinking {
   color: var(--red-4);
+  border-color: var(--red-4);
   background-color: var(--red-2);
 }
 .category.Reading {
   color: var(--orange-4);
+  border-color: var(--orange-4);
   background-color: var(--orange-2);
 }
 .category.Vitamin {
   color: var(--green-4);
+  border-color: var(--green-4);
   background-color: var(--green-2);
 }
 
 .category.Weekly {
   color: var(--blue-4);
+  border-color: var(--blue-4);
   background-color: var(--blue-2);
 }
 .category.Book {
   color: var(--purple-4);
+  border-color: var(--purple-4);
   background-color: var(--purple-2);
 }
 
