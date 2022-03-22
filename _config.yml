@@ -1,12 +1,12 @@
-title: Jekyll Serial Programmer
+title: Logeast's Personal Blog
 markdown: kramdown
 url: ""
 baseurl: "/"
 
 # for atom feed
 author:
-  name: Sharad Raj Singh Maurya
-  email: dev_sharad@outlook.com
+  name: Logeast
+  email: logeast@outlook.com
 
 plugins:
   - jemoji

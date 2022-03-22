@@ -1,23 +1,19 @@
-name: Logeast
-dp: https://avatars2.githubusercontent.com/u/36638057?s=460&u=0cbe4fd6b5a3655d91b3eb86db834d0829a0c086&v=4
+name: Logeast's Personal Blog
+dp: whoami
 description: "
   <p>
-    Developed by Sharad Raj who lives in India building useful things for the world.
+    Hi 👋 , I'm a UX Engineer with a focus on design and game develop.
   </p>
   <br/>
   <p>
-    You should follow him on <a href='https://github.com/sharadcodes' target='_blank'>Github</a>
+    I write articles about fantastic things.
   </P>
 "
-email: dev_sharad@outlook.com
+email: logeast@outlook.com
 contact:
-  - title: linkedin
-    url: https://www.linkedin.com/in/srsmaurya
   - title: github
-    url: https://github.com/sharadcodes
+    url: https://github.com/logeast
   - title: twitter
-    url: https://twitter.com/sharadcodes
-  - title: dev
-    url: https://dev.to/sharadcodes
+    url: https://twitter.com/logeast4
   - title: email
-    url: mailto:dev_sharad@outlook.com
+    url: mailto:logeast@outlook.com
