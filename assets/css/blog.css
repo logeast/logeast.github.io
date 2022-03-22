@@ -39,14 +39,12 @@ main {
 #bio {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 #img-wrapper img {
   border-radius: 50%;
-  max-width: 100px;
-}
-#bio-wrapper {
-  margin-left: 1rem;
+  width: 100px;
 }
 #text-wrapper {
   line-height: 1.2rem;
