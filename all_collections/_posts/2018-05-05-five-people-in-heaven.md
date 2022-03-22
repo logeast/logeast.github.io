@@ -2,7 +2,7 @@
 layout: post
 title: 《你在天堂遇见的五个人》读书笔记
 date: 2018-05-05
-categories: ["Reading", "Book"]
+categories: [Reading, Book]
 ---
 
 > 天堂就是这样的，你可以洞悉你的昨天。生命的意义在于存在，每个人在你生命中出现都有一个原因。

@@ -2,7 +2,7 @@
 layout: post
 title: Google 涂鸦二十年
 date: 2018-05-05
-categories: ["Reading", "Vitamin"]
+categories: [Reading, Vitamin]
 ---
 
 > We have no illusions that we’re perfect. But we’re constantly working to make things better. 不求完美，但求最好。
