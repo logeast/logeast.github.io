@@ -2,7 +2,7 @@
 layout: post
 title: 写写自己，写给自己
 date: 2017-09-23
-categories: [Tinking]
+categories: [Thinking]
 ---
 
 > 我的意中人是个盖世英雄，有一天他会踩着七彩祥云来娶我。
