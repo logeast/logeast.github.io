@@ -20,6 +20,40 @@
   --purple-2: #eabfff;
   --purple-4: #9747ff;
 }
+/* reset styles */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
+
+* {
+  font-family: inherit;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  -webkit-user-drag: none;
+  -moz-window-dragging: none;
+  -webkit-tap-highlight-color: transparent;
+}
+* img {
+  max-width: 100%;
+}
+html,
+body {
+  color: var(--white-2);
+  background-color: var(--gray-6);
+  font-family: "JetBrains Mono", monospace;
+  line-height: 2rem;
+  background-color: var(--gray-5);
+}
+a {
+  color: var(--blue-4);
+}
+header {
+  padding: 2rem 0 4rem 0;
+}
+main {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 3rem 0;
+}
 
 #category-modal-bg {
   position: fixed;
