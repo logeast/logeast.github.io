@@ -5,7 +5,7 @@
     <main>
       {% include header.html %} {% include bio.html %}
       <section class="articles">
-        {% for post in site.posts %}
+        {% for post in site.posts %} {% if !post.draft %}
         <article class="article">
           <h2 class="article-title">
             <a href="{{site.baseurl}}{{post.url}}"> {{post.title}} </a>
@@ -22,7 +22,7 @@
             {% endfor %}
           </div>
         </article>
-        {%endfor%}
+        {% endif %} {%endfor%}
       </section>
       {% include footer.html %}
     </main>
