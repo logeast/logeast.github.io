@@ -40,7 +40,7 @@ categories: [Computer]
 
 3. 快速调整对比度
 
-![](../images/20220324-contrast.png)
+![](/assets/2022/0324-contrast.png)
 
 ## 参考资料
 
