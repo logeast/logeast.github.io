@@ -1,4 +1,4 @@
-# Logeast's Personal Blog
+# Logeast's Blog
 
 [Have a good Time](https://logeast.github.io)
 
