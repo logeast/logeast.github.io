@@ -148,27 +148,26 @@ hr {
 }
 
 .category.Thinking {
-  color: var(--red-4);
+  color: #782225;
   background-color: var(--red-2);
 }
 .category.Reading {
-  color: var(--orange-4);
-  border-color: var(--orange-4);
+  color:#542900;
   background-color: var(--orange-2);
 }
 .category.Project {
-  color: var(--yellow-4);
+  color: #524000;
   background-color: var(--yellow-2);
 }
 .category.Vitamin {
-  color: var(--green-4);
+  color: #064725;
   background-color: var(--green-2);
 }
 .category.Weekly {
-  color: var(--blue-4);
+  color: #022F96;
   background-color: var(--blue-2);
 }
 .category.Book {
-  color: var(--purple-4);
+  color: #4d2482;
   background-color: var(--purple-2);
 }
