@@ -85,7 +85,6 @@
   border-collapse: collapse;
 }
 .content table th {
-  background-color: var(--gray-3);
   color: var(--white-2);
   border: 1px solid var(--gray-5);
 }
@@ -108,7 +107,7 @@
 }
 
 .content pre {
-  background: var(--gray-3) !important;
+  background: var(--gray-3);
   padding: 1rem 2rem;
   margin-bottom: 1.75rem;
 }

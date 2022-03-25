@@ -2,7 +2,6 @@ header .site-title {
   font-size: 4rem;
   font-weight: bolder;
   line-height: 110%;
-  color: var(--white-1);
 }
 
 /* header */
@@ -44,7 +43,6 @@ header .site-title {
 }
 .articles .article {
   padding: 2rem;
-  background: var(--gray-3);
   border-radius: 15px;
   transition: all 0.2s ease-in-out;
 }
