@@ -43,13 +43,17 @@ AA（最低）对比度为 4.5:1；18pt 或 14pt 加粗对比度可降至 3:1。
 
 ### 1. 模拟视觉缺陷功能
 
+```
 控制台 > 渲染 > 模拟视觉缺陷
 DevTools > Rendering > Emulate vision deficiency
+```
 
 ### 2. 检查文字的对比度
 
+```
 控制台 > CSS 概览 > 颜色 > 对比度问题
 DevTools > CSS Overview > Colors > Contrast
+```
 
 ### 3. 快速调整对比度
 
