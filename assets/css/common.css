@@ -223,3 +223,12 @@ hr {
   background-color: var(--blue-2);
   color: var(--blue-9);
 }
+
+@media screen and (min-width: 550px) {
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 10;
+  }
+}

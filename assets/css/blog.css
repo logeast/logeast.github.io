@@ -64,14 +64,6 @@ header .site-title {
 
 /* media query */
 
-@media screen and (min-width: 550px) {
-  header {
-    position: sticky;
-    top: 0;
-    background: var(--bg-color);
-  }
-}
-
 @media screen and (max-width: 750px) {
   header .site-title {
     font-size: 3rem;
