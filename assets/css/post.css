@@ -2,7 +2,6 @@
   font-size: 1.4rem;
   font-weight: bolder;
   line-height: 110%;
-  color: var(--white-1);
 }
 
 .article {
@@ -107,16 +106,15 @@
 }
 
 .content pre {
-  background: var(--bg-color-2);
+  background: var(--gray-12);
+  color: var(--color);
   padding: 1rem 2rem;
   margin-bottom: 1.75rem;
 }
 
 .content code {
   padding: 3px 5px;
-  color: var(--color);
   white-space: pre;
-  background-color: var(--bg-color-2);
 }
 
 /* lbox */
