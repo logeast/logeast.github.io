@@ -27,35 +27,39 @@ AA（最低）对比度为 4.5:1；18pt 或 14pt 加粗对比度可降至 3:1。
 
 ![](https://web-dev.imgix.net/image/admin/DcYclKelVqhQ2CWlIG97.jpg?auto=format&w=1600)
 
-## 高级感知对比度算法 (APCA)
+## 高级感知对比度算法 ([APCA](https://w3c.github.io/silver/guidelines/methods/Method-font-characteristic-contrast.html))
+
+这是一种基于现代色彩感知研究来计算对比度的新方法。与 AA/AAA 准则相比，APCA 更加与上下文相关。
 
 1. 空间属性（字体粗细和文本大小）
 2. 文本颜色（文本和背景之间的感知亮度差异）
 3. 上下文（环境光、周围环境和文本的预期目的）
 
+![](https://web-dev.imgix.net/image/admin/YhGKRLYvt37j3ldlwiXE.png?auto=format&w=1600)
+
 ## 工具
 
 浏览器提供了一些工具来帮助检查页面的对比度。
 
-1. 模拟视觉缺陷功能
+### 1. 模拟视觉缺陷功能
 
-```
 控制台 > 渲染 > 模拟视觉缺陷
 DevTools > Rendering > Emulate vision deficiency
-```
 
-2. 检查文字的对比度
+### 2. 检查文字的对比度
 
-```
 控制台 > CSS 概览 > 颜色 > 对比度问题
 DevTools > CSS Overview > Colors > Contrast
-```
 
-3. 快速调整对比度
+### 3. 快速调整对比度
+
+可以通过浏览器开发者工具快速调整对比度。
 
 ![](/assets/2022/0324-contrast.png)
 
-4. [WAVE Web 可访问性评估工具](https://wave.webaim.org/report)
+### 4. [WAVE Web 可访问性评估工具](https://wave.webaim.org/report)
+
+在这里输入你的网站，可以获得可访问性的评估结果。
 
 ## 参考资料
 
