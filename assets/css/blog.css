@@ -2,7 +2,6 @@ header .site-title {
   font-size: 4rem;
   font-weight: bolder;
   line-height: 110%;
-  color: var(--color);
 }
 
 /* header */
@@ -25,7 +24,6 @@ header .site-title {
   margin-top: 1rem;
 }
 #social-wrapper img {
-  filter: invert();
   width: 25px;
   height: 25px;
   margin: 0 0 0.3rem 0;

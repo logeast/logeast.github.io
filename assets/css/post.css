@@ -86,9 +86,12 @@
 .content table th {
   background: var(--bg-color-2);
   color: var(--color);
-  border: 1px solid var(--border-color);
 }
-.content table * {
+.content table tr,
+.content table th,
+.content table td,
+.content table thead,
+.content table tbody {
   border: 1px solid var(--border-color);
   padding: 0.5rem 1rem;
 }
@@ -113,11 +116,16 @@
   margin-bottom: 1.75rem;
   border-radius: 0.5rem;
 }
+.content pre code {
+  background: transparent;
+  color: var(--gray-2);
+}
 
 .content code {
   padding: 3px 5px;
   white-space: pre;
-  background: var(--gray-10);
+  background: var(--bg-color-2);
+  color: var(--color);
 }
 
 /* lbox */

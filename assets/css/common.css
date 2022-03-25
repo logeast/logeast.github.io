@@ -48,6 +48,10 @@ html[data-theme="dark"] {
   --border-color: var(--gray-9);
   --color: var(--gray-2);
 }
+html[data-theme="dark"] #social-wrapper {
+  filter: invert();
+}
+
 /* reset styles */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,300;0,400;0,800;1,100;1,300;1,400;1,800&display=swap");
 
@@ -70,6 +74,9 @@ body {
 }
 a {
   color: var(--blue-6);
+}
+a.link-text {
+  color: var(--color);
 }
 header {
   padding: 2rem 0 4rem 0;
