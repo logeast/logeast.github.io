@@ -24,6 +24,7 @@
   --cyan-2: #b5f5ec;
   --cyan-9: #00474f;
   --blue-2: #bae7ff;
+  --blue-6: #1890ff;
   --blue-9: #003a8c;
   --geekblue-2: #d6e4ff;
   --geekblue-9: #061178;
@@ -56,7 +57,7 @@ body {
   background-color: var(--gray-5);
 }
 a {
-  color: var(--blue-4);
+  color: var(--blue-6);
 }
 header {
   padding: 2rem 0 4rem 0;
@@ -64,7 +65,7 @@ header {
 main {
   margin: 0 auto;
   max-width: 1024px;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
 }
 
 #category-modal-bg {
