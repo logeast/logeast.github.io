@@ -28,9 +28,9 @@
   --green-9: #135200;
   --cyan-2: #b5f5ec;
   --cyan-9: #00474f;
-  --blue-2: #bae7ff;
-  --blue-6: #1890ff;
-  --blue-9: #003a8c;
+  --blue-2: #cfe5ff;
+  --blue-6: #296bef;
+  --blue-9: #021f7d;
   --geekblue-2: #d6e4ff;
   --geekblue-9: #061178;
   --purple-2: #efdbff;
@@ -80,12 +80,12 @@ a.link-text {
   color: var(--color);
 }
 header {
-  padding: 2rem 0 4rem 0;
+  padding: 2rem 0;
 }
 main {
   margin: 0 auto;
   max-width: 1024px;
-  padding: 3rem 2rem;
+  padding: 1.5rem;
 }
 
 /* atomic css */
@@ -97,6 +97,12 @@ main {
 }
 .justify-between {
   justify-content: space-between;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-1rem {
+  gap: 1rem;
 }
 
 #category-modal-bg {
