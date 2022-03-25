@@ -86,10 +86,10 @@
 }
 .content table th {
   color: var(--white-2);
-  border: 1px solid var(--gray-5);
+  border: 1px solid var(--border-color);
 }
 .content table * {
-  border: 1px solid var(--gray-3);
+  border: 1px solid var(--border-color);
   padding: 0.2rem;
 }
 .content img {
@@ -107,16 +107,16 @@
 }
 
 .content pre {
-  background: var(--gray-3);
+  background: var(--bg-color-2);
   padding: 1rem 2rem;
   margin-bottom: 1.75rem;
 }
 
 .content code {
   padding: 3px 5px;
-  color: var(--white-2);
+  color: var(--color);
   white-space: pre;
-  background-color: var(--gray-3);
+  background-color: var(--bg-color-2);
 }
 
 /* lbox */

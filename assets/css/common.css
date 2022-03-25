@@ -99,7 +99,7 @@ main {
   border-radius: 1rem;
   padding: 1rem;
   margin: auto;
-  background: var(--gray-1);
+  background: var(--bg-color);
   display: none;
   visibility: hidden;
   line-height: 140%;
@@ -122,7 +122,6 @@ main {
 .modal-article,
 .modal-article-date {
   display: block;
-  color: var(--white-2);
 }
 .modal-article {
   margin-bottom: 0.5rem;
@@ -133,11 +132,11 @@ main {
   font-size: 0.8rem;
 }
 .modal-article:hover {
-  background: var(--gray-4);
+  background: var(--bg-color-2);
 }
 
 hr {
-  border-top: 2px dashed var(--white-2) !important;
+  border-top: 2px dashed var(--border-color) !important;
   border-bottom: none !important;
   border-left: none !important;
   border-right: none !important;
