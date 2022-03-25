@@ -59,7 +59,7 @@
   margin-bottom: 1.75rem;
   font-style: italic;
   font-weight: 100;
-  border-left: 0.3rem solid var(--white-2);
+  border-left: 0.3rem solid var(--border-color);
 }
 .content strong {
   font-weight: bold;
@@ -84,17 +84,18 @@
   border-collapse: collapse;
 }
 .content table th {
-  color: var(--white-2);
+  background: var(--bg-color-2);
+  color: var(--color);
   border: 1px solid var(--border-color);
 }
 .content table * {
   border: 1px solid var(--border-color);
-  padding: 0.2rem;
+  padding: 0.5rem 1rem;
 }
 .content img {
   max-width: 100%;
   margin: 0.5rem 0;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 /* pre , code */
@@ -102,19 +103,21 @@
 .content div,
 .content div pre,
 .content div pre code {
-  overflow-x: auto !important;
+  overflow-x: auto;
 }
 
 .content pre {
-  background: var(--gray-12);
-  color: var(--color);
+  background: var(--gray-10);
+  color: var(--gray-2);
   padding: 1rem 2rem;
   margin-bottom: 1.75rem;
+  border-radius: 0.5rem;
 }
 
 .content code {
   padding: 3px 5px;
   white-space: pre;
+  background: var(--gray-10);
 }
 
 /* lbox */

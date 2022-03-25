@@ -2,6 +2,7 @@ header .site-title {
   font-size: 4rem;
   font-weight: bolder;
   line-height: 110%;
+  color: var(--color);
 }
 
 /* header */
@@ -24,7 +25,7 @@ header .site-title {
   margin-top: 1rem;
 }
 #social-wrapper img {
-  filter: invert() !important;
+  filter: invert();
   width: 25px;
   height: 25px;
   margin: 0 0 0.3rem 0;
@@ -45,10 +46,11 @@ header .site-title {
   padding: 2rem;
   border-radius: 15px;
   transition: all 0.2s ease-in-out;
+  background: var(--bg-color-2);
 }
 .articles .article .article-title,
 .articles .article .article-title a {
-  color: var(--white-2);
+  color: var(--color);
   font-weight: 100;
   font-style: italic;
   font-size: 1.4rem;
