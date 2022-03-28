@@ -232,3 +232,8 @@ hr {
     z-index: 10;
   }
 }
+
+/* comment */
+.utterances {
+  max-width: initial;
+}
