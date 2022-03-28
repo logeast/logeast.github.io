@@ -30,6 +30,7 @@ const reflectPreference = () => {
 
 const theme = {
   value: getColorPreference(),
+  commentValue: `github-${getColorPreference()}`,
 };
 
 // set early so no page flashes / CSS is made aware
