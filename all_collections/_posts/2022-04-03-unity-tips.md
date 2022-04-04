@@ -1,7 +1,7 @@
 ---
 
 layout: post\
-title: Unity 技巧\
+title: Unity 开发技巧\
 date: 2022-04-03\
 categories: Thinking, Reading\
 draft: true
@@ -43,6 +43,8 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
 - 需要大量转换的，可以用[渲染管线转换器](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/features/rp-converter.html)
 
 ## 2. 调整影子渲染
+
+- [ ] 人物影子展示不全的问题
 
 ### 调整显示距离
 
@@ -241,3 +243,33 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
   - 定义函数 MoveToTarget 函数，注意方法要和 event OnMouseClicked 完全对应
 
   - 在 Start 函数中执行 MoveToTarget 即可
+
+## 8. 鼠标指针贴图
+
+- 导入 png 到 `ssets/Cursors/...` ，设置 `Texture Type > Cursor`
+
+<!---->
+
+- 📒 `Cursor.SetCursor` 设置鼠标贴图
+
+## 9. 摄像机跟踪
+
+### Cinemachine 智能相机
+
+- 虚拟相机替代默认相机
+
+## 10. 美化场景
+
+### 设置迷雾效果
+
+- `Window > Rendering > Lighting > Environment > Flog`
+
+### 设置 Post Processing
+
+- `Main Camera > Rendering > Post Processing` 启动才能渲染
+
+<!---->
+
+- `Hierarchy > Right Click > Volume > Global Volume`&#x20;
+
+  - `profile > new > ...` 添加特效
