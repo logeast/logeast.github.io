@@ -22,3 +22,7 @@ This blog is based on [Jekyll Theme Serial Programmer](git clone https://github.
 1. Run `bundle install`
 2. Start Jekyll server `bundle exec jekyll serve`
 3. Access via localhost or according to your pc configurations.
+
+### LICENSE
+
+[Creative Commons Legal Code](./LICENSE)
