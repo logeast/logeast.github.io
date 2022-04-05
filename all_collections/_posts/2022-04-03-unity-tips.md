@@ -1,11 +1,8 @@
 ---
-
-layout: post\
-title: Unity 开发技巧\
-date: 2022-04-03\
-categories: Thinking, Reading\
-draft: true
-
+layout: post
+title: Unity 开发技巧
+date: 2022-04-03
+categories: Thinking, Reading
 ---
 
 记录 Unity 应用过程中的一些小技巧。
@@ -40,11 +37,9 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
 
 - 一种实用转换方法 `Edit > Rendering > Materials > Convert Selected Build-in Materials to UGP`
 
-- 需要大量转换的，可以用[渲染管线转换器](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/features/rp-converter.html)
+- 需要大量转换的，可以用[渲染管线转换器](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@12.1/manual/features/rp-converter.html) `Window > Rendering > Render Pipeline Converter`
 
 ## 2. 调整影子渲染
-
-- [ ] 人物影子展示不全的问题
 
 ### 调整显示距离
 
@@ -273,3 +268,39 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
 - `Hierarchy > Right Click > Volume > Global Volume`&#x20;
 
   - `profile > new > ...` 添加特效
+
+## 11. 为角色添加动画
+
+- 新建 Animator，并拖入角色的 Animator 组件中
+
+- 添加 Blend Tree
+
+- 将角色动画拖入 Motion，设置对应的阈值
+
+- 为角色添加动画触发的脚本
+
+## 12. Shader Graph 遮挡剔除
+
+- [ ] 为人物角色[添加遮挡剔除](https://www.bilibili.com/video/BV1i5411P7bd/?spm_id_from=trigger_reload)
+
+让角色在遮挡物后面有一个大致的轮廓。
+
+- 新建 Material
+
+- 新建 Shader
+
+- 添加 Fresnel 效果 光圈替换角色
+
+- color 变量，和 Fresnel 对象叠加
+
+- 添加噪点 Dither
+
+- 设置阈值调整渲染
+
+- 为人物添加 render feature
+
+  - 被遮挡时添加一个
+
+  - 出来后再添加一个
+
+## 13.&#x20;
