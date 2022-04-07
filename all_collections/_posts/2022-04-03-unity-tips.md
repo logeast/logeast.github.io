@@ -2,7 +2,7 @@
 layout: post
 title: Unity 开发技巧
 date: 2022-04-03
-categories: Thinking, Reading
+categories: Thinking Reading
 ---
 
 记录 Unity 应用过程中的一些小技巧。
