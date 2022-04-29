@@ -42,6 +42,8 @@
   --bg-color-2: var(--gray-4);
   --border-color: var(--gray-5);
   --color: var(--gray-10);
+  --cursor-default: url("../cursor-default.png"), default;
+  --cursor-pointer: url("../cursor-pointer.png"), pointer;
 }
 html[data-theme="dark"] {
   --bg-color: var(--gray-12);
@@ -72,6 +74,7 @@ body {
   line-height: 2rem;
   background-color: var(--bg-color);
   color: var(--color);
+  cursor: var(--cursor-default);
 }
 a {
   color: var(--blue-6);
@@ -189,7 +192,7 @@ hr {
   font-size: 0.7rem;
   padding: 0 0.4rem;
   line-height: 1.3rem;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   font-weight: 600;
   background-color: var(--geekblue-2);
   color: var(--geekblue-9);

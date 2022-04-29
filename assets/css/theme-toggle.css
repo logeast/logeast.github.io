@@ -86,7 +86,7 @@
   block-size: var(--size);
   aspect-ratio: 1;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: var(--cursor-pointer);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   outline-offset: 5px;
