@@ -78,6 +78,7 @@ body {
 }
 a {
   color: var(--blue-6);
+  cursor: var(--cursor-pointer);
 }
 a.link-text {
   color: var(--color);
