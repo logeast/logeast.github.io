@@ -111,6 +111,7 @@
 
 html {
   color-scheme: light;
+  transition: all 0.2s ease-in-out;
 }
 
 html[data-theme="dark"] {

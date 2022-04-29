@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 修复 React 和 Typescript 中 CSS 自定义属性报错问题
-date: 2022-04-07
+date: 2022-04-29
 categories: Thinking Bugfix
 ---
 
@@ -17,7 +17,7 @@ Object literal may only specify known properties, and '"--color"' does not exist
 
 ## 解决方案
 
-有两种方法可以修复这个错误
+有两种方法可以修复这个错误。
 
 ### 方法 1. 将对象转换为 `React.CSSProperties`
 
