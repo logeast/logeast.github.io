@@ -157,7 +157,7 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
 
   - UnityEvent
 
-  - Navagation.
+  - Navagation
 
 - `[System.Serializable]` 序列化非继承 MonoBehaviour
 
@@ -303,4 +303,99 @@ Unity 配置 VSCode： [Unity Development with VS Code](https://code.visualstudi
 
   - 出来后再添加一个
 
-## 13.&#x20;
+## 13. 添加默认挂载组件
+
+在 class 上面添加一行 `[RequireComponent(typeof(NavMeshAgent))]` 。
+
+---
+
+## 基础知识课程
+
+学习 Unity 游戏开发基础
+
+- Unity 基础知识
+
+- Unity C#脚本基础知识
+
+- Unity 动画基础知识
+
+- Unity Physics 基础知识
+
+- Unity 导航基础知识
+
+- Unity 材质知识
+
+- Unity 光照基础知识
+
+- Unity 音频基础知识
+
+- Unity UI 基础知识
+
+- Unity 游戏玩法基础知识
+
+## 美术课程
+
+通过学习 Maya 和 Zbrush 扩展您的技能
+
+- 游戏角色概念设计基础知识
+
+- 游戏环境概念设计
+
+- 在 Unity 和 Maya 中创建游戏环境
+
+- 使用 Substance Suite 创建游戏环境纹理
+
+- 游戏属性建模基础知识
+
+- 在 Zbrush 中雕刻游戏角色
+
+- 在 Maya 中重塑游戏角色
+
+- Maya 中的游戏角色 UV 贴图
+
+- Substance Painter 中的游戏角色纹理
+
+- 游戏角色骨骼绑定基础知识
+
+- Unity 和 Maya 中的游戏角色动画
+
+## 编程课程
+
+学习如何为重要的游戏功能编程
+
+- 角色控制器
+
+- 敌人 AI
+
+- 角色库存系统
+
+- 角色状态系统
+
+- 战斗系统
+
+- 战利品系统
+
+- 游戏管理器、加载器、游戏循环[\
+  ](https://www.youtube.com/embed/Aoc0Udb_w_U?autoplay=1&disablekb=1&iv_load_policy=3&modestbranding=1&showinfo=0&html5=1&enablejsapi=1&rel=0)
+
+## 设计课程
+
+深入学习游戏设计
+
+- 设计课程蓝图
+
+- 游戏设计基础知识
+
+- 专业关卡设计基础知识
+
+- 游戏机制设计基础知识
+
+- 《持剑勇士》游戏系统的原型设计
+
+- Unity 中的迭代关卡设计
+
+- 《持剑勇士》：设计模块组
+
+- 使用 Unity 的 Cinemachine 和 Timeline 设计影片动画
+
+- 《持剑勇士》：后期处理和最终润色
