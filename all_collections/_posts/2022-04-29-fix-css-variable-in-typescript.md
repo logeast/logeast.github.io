@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 修复 React 和 Typescript 中 CSS 自定义属性报错问题
+title: 修复 React 和 TypeScript 中 CSS 自定义属性报错问题
 date: 2022-04-29
-categories: Thinking
+categories: [Thinking, React, TypeScript]
 ---
 
 ## 问题

@@ -3,6 +3,7 @@ layout: post
 title: 收集游戏和游戏术语
 date: 2022-04-07
 categories: Thinking Reading
+draft: true
 ---
 
 ## 术语
