@@ -27,12 +27,16 @@ classNames(["foo", { bar: true }]); // => 'foo bar'
 
 ## 源码思路
 
-[index.js](https://github.com/JedWatson/classnames/blob/master/index.js)
+源码地址：[index.js](https://github.com/JedWatson/classnames/blob/master/index.js)
+
+整个源码的结构如下：
 
 1. 允许输入任意数量的参数
 2. 处理不同的参数类型，并返回字符串
 3. 将所有的字符串推入一个数组
 4. 将数组中的字符串连接起来返回
+
+![](/assets/2022/0506-classnames.png)
 
 ### 任意数量的参数问题
 
@@ -60,7 +64,7 @@ function classNames() {
 - 其他对象
 - 其他类型
 
-1. 对于字符串和数字类型直接压入数组。
+对于字符串和数字类型直接压入数组。
 
 ```javascript
 var classes = [];
@@ -72,7 +76,7 @@ if (argType === "string" || argType === "number") {
 }
 ```
 
-2. 对于数组类型，递归调用 `classNames()`，并将结果压入数组。
+对于数组类型，递归调用 `classNames()`，并将结果压入数组。
 
 ```javascript
 if (Array.isArray(arg)) {
@@ -86,13 +90,13 @@ if (Array.isArray(arg)) {
 }
 ```
 
-3. 对于对象类型，遍历对象，将属性值为 `true` 的属性名压入数组。
+对于对象类型，遍历对象，将属性值为 `true` 的属性名压入数组。
 
 数组也是一种对象，所以这里还需要通过 `arg.toString === Object.prototype.toString` 进行一层判断，过滤掉数组对象。
 
 > `Object.prototype.hasOwnProperty` 用来判断属性是否在对象中，返回布尔值。
 
-```javascript
+````javascript
 var hasOwn = {}.hasOwnProperty;
 
 if (argType === "object") {
@@ -105,13 +109,12 @@ if (argType === "object") {
     }
   }
 }
-```
 
-4. 其他类型则转换为字符串，并压入数组。
+其他类型则转换为字符串，并压入数组。
 
 ```javascript
 arg.toString();
-```
+````
 
 ## 技巧拓展
 
@@ -204,11 +207,11 @@ function parse(resultSet, arg) {
     case "number":
       parseNumber(resultSet, arg);
       break;
-    case "object":
-      parseObject(resultSet, arg);
-      break;
     case "array":
       parseArray(resultSet, arg);
+      break;
+    case "object":
+      parseObject(resultSet, arg);
       break;
     default:
       resultSet[arg] = false;
