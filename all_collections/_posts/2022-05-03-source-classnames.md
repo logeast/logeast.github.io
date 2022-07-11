@@ -114,7 +114,7 @@ if (argType === "object") {
 
 ```javascript
 arg.toString();
-````
+```
 
 ## 技巧拓展
 
